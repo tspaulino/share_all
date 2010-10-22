@@ -1,32 +1,32 @@
-<% form_for @user do |f| %>
+<% semantic_form_for @user do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :login %><br />
-    <%= f.text_field :login %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :hometown %><br />
-    <%= f.text_field :hometown %>
-  </p>
-  <p>
-    <%= f.label :persistence_token %><br />
-    <%= f.text_field :persistence_token %>
-  </p>
-  <p>
-    <%= f.label :crypted_password %><br />
-    <%= f.text_field :crypted_password %>
-  </p>
-  <p><%= f.submit %></p>
+  <% f.inputs @user do %> 
+    <p>
+      <%= f.input :name %>
+    </p>
+    <p>
+      <%= f.input :login %>
+    </p>
+    <p>
+      <%= f.input :email %>
+    </p>
+    <p>
+      <%= f.input :avatar, :as => :file %>
+    </p>
+    <p>
+      <%= f.input :description %>
+    </p>
+    <p>
+      <%= f.input :hometown %>
+    </p>
+    <p>
+      <%= f.input :password, :as => :password %>
+    </p>
+    <p>
+      <%= f.input :password_confirmation, :as => :password %>     
+    </p>                     
+  <% end %>
+  <% f.buttons do %>  
+    <p><%= f.commit_button %></p>
+  <% end %>
 <% end %>

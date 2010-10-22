@@ -10,11 +10,11 @@
 </p>
 <p>
   <strong>User:</strong>
-  <%=h @image.user %>
+  <%=h @image.user.name %>
 </p>
 
 <p>
-  <%= link_to "Edit", edit_image_path(@image) %> |
-  <%= link_to "Destroy", @image, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", images_path %>
+  <%= link_to "Edit", edit_user_image_path(@image.user, @image) %> |
+  <%= link_to "Destroy", [@image.user, @image], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", user_images_path(@image.user) %>
 </p>

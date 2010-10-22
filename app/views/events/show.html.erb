@@ -10,7 +10,7 @@
 </p>
 <p>
   <strong>Local:</strong>
-  <%=h @event.local %>
+  <%=h @event.location %>
 </p>
 <p>
   <strong>Start Time:</strong>
@@ -30,11 +30,11 @@
 </p>
 <p>
   <strong>User:</strong>
-  <%=h @event.user %>
+  <%=h @event.user.name %>
 </p>
 
 <p>
-  <%= link_to "Edit", edit_event_path(@event) %> |
-  <%= link_to "Destroy", @event, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", events_path %>
+  <%= link_to "Edit", edit_user_event_path(@event.user, @event) %> |
+  <%= link_to "Destroy", [@event.user, @event], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", user_events_path(@event.user) %>
 </p>

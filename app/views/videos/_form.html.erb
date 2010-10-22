@@ -1,16 +1,16 @@
-<% form_for @video do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :author %><br />
-    <%= f.text_field :author %>
-  </p>
-  <p>
-    <%= f.label :user %><br />
-    <%= f.text_field :user %>
-  </p>
-  <p><%= f.submit %></p>
+<% semantic_form_for [@current_user, @video] do |f| %>
+  <% f.inputs @video do %>
+    <p>
+      <%= f.input :name %>
+    </p>
+    <p>
+      <%= f.input :author %>
+    </p>
+    <p>
+      <%= f.input :video, :as => :file, :required => true %>
+    </p>
+  <% end %>
+  <% f.buttons do %>  
+    <p><%= f.commit_button %></p>
+  <% end %>
 <% end %>

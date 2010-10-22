@@ -1,12 +1,14 @@
-<% form_for @document do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :user %><br />
-    <%= f.text_field :user %>
-  </p>
-  <p><%= f.submit %></p>
+<% semantic_form_for [@current_user, @document] do |f| %>
+  <%= f.error_messages %> 
+  <% f.inputs @document do %>
+    <p>
+      <%= f.input :name, :required => true %>
+    </p>
+    <p>
+      <%= f.input :file, :as => :file, :required => true %>
+    </p>    
+  <% end %>
+  <% f.buttons do %>  
+    <p><%= f.commit_button %></p>
+  <% end %>
 <% end %>

@@ -10,11 +10,11 @@
 </p>
 <p>
   <strong>User:</strong>
-  <%=h @music.user %>
+  <%=h @music.user.name %>
 </p>
 
 <p>
-  <%= link_to "Edit", edit_music_path(@music) %> |
-  <%= link_to "Destroy", @music, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", musics_path %>
+  <%= link_to "Edit", edit_user_music_path(@music.user, @music) %> |
+  <%= link_to "Destroy", [@music.user, @music], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", user_musics_path(@music.user) %>
 </p>

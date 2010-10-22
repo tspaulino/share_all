@@ -10,11 +10,11 @@
 </p>
 <p>
   <strong>User:</strong>
-  <%=h @video.user %>
+  <%=h @video.user.name %>
 </p>
 
 <p>
-  <%= link_to "Edit", edit_video_path(@video) %> |
-  <%= link_to "Destroy", @video, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", videos_path %>
+  <%= link_to "Edit", edit_user_video_path(@video.user, @video) %> |
+  <%= link_to "Destroy", [@video.user, @video], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", user_videos_path(@video.user) %>
 </p>

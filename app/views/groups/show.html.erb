@@ -10,11 +10,11 @@
 </p>
 <p>
   <strong>User:</strong>
-  <%=h @group.user %>
+  <%=h @group.user.name %>
 </p>
 
 <p>
-  <%= link_to "Edit", edit_group_path(@group) %> |
-  <%= link_to "Destroy", @group, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", groups_path %>
+  <%= link_to "Edit", edit_user_group_path(@group.user, @group) %> |
+  <%= link_to "Destroy", [@group.user, @group], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", user_groups_path(@group.user) %>
 </p>

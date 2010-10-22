@@ -15,17 +15,17 @@
     <tr>
       <td><%=h event.name %></td>
       <td><%=h event.description %></td>
-      <td><%=h event.local %></td>
+      <td><%=h event.location %></td>
       <td><%=h event.start_time %></td>
       <td><%=h event.end_time %></td>
       <td><%=h event.latitude %></td>
       <td><%=h event.longitude %></td>
-      <td><%=h event.user %></td>
-      <td><%= link_to "Show", event %></td>
-      <td><%= link_to "Edit", edit_event_path(event) %></td>
-      <td><%= link_to "Destroy", event, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%=h event.user.name %></td>
+      <td><%= link_to "Show", [event.user, event] %></td>
+      <td><%= link_to "Edit", edit_user_event_path(event.user, event) %></td>
+      <td><%= link_to "Destroy", [event.user, event], :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Event", new_event_path %></p>
+<p><%= link_to "New Event", new_user_event_path(@current_user) %></p>

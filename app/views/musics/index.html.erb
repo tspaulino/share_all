@@ -10,12 +10,12 @@
     <tr>
       <td><%=h music.name %></td>
       <td><%=h music.author %></td>
-      <td><%=h music.user %></td>
-      <td><%= link_to "Show", music %></td>
-      <td><%= link_to "Edit", edit_music_path(music) %></td>
-      <td><%= link_to "Destroy", music, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%=h music.user.name %></td>
+      <td><%= link_to "Show", [music.user, music] %></td>
+      <td><%= link_to "Edit", edit_user_music_path(music.user, music) %></td>
+      <td><%= link_to "Destroy", [music.user, music], :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Music", new_music_path %></p>
+<p><%= link_to "New Music", new_user_music_path(@current_user) %></p>

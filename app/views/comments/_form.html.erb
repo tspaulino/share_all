@@ -1,16 +1,11 @@
-<% form_for @comment do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :text %><br />
-    <%= f.text_area :text %>
-  </p>
-  <p>
-    <%= f.label :user %><br />
-    <%= f.text_field :user %>
-  </p>
-  <p>
-    <%= f.label :approved %><br />
-    <%= f.check_box :approved %>
-  </p>
-  <p><%= f.submit %></p>
+<% semantic_form_for [@current_user, @object, @comment] do |f| %>
+  <%= f.error_messages %>       
+  <% f.inputs @comment do %>
+    <p>
+      <%= f.input :text, :required => true %>
+    </p>
+  <% end %>
+  <% f.buttons do %>  
+    <p><%= f.commit_button %></p>
+  <% end %>
 <% end %>

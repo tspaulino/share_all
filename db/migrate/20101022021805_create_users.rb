@@ -8,6 +8,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :hometown
       t.string :persistence_token
       t.string :crypted_password
+      t.string :avatar_file_name
+      t.string :avatar_content_type
+      t.integer :avatar_file_size
       t.boolean :active, :default => true
 
       t.timestamps

@@ -1,13 +1,13 @@
 ActionController::Routing::Routes.draw do |map|
 
   map.resources :users do |user|   
-    user.resources :videos
-    user.resources :musics   
-    user.resources :images   
-    user.resources :documents
-    user.resources :events
-    user.resources :comments
-    user.resources :groups    
+    user.resources :videos, :has_many => :comments
+    user.resources :musics, :has_many => :comments         
+    user.resources :images, :has_many => :comments
+    user.resources :documents, :has_many => :comments
+    user.resources :events, :has_many => :comments  
+    user.resources :groups, :has_many => :comments
+    user.resources :comments        
   end
   
   map.login '/login', :controller => "user_sessions", :action => "login"     

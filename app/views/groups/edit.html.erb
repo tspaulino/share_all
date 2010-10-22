@@ -3,6 +3,6 @@
 <%= render :partial => 'form' %>
 
 <p>
-  <%= link_to "Show", @group %> |
-  <%= link_to "View All", groups_path %>
+  <%= link_to "Show", [@group.user, @group] %> |
+  <%= link_to "View All", user_groups_path(@group.user) %>
 </p>

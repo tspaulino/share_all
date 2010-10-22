@@ -10,12 +10,12 @@
     <tr>
       <td><%=h video.name %></td>
       <td><%=h video.author %></td>
-      <td><%=h video.user %></td>
-      <td><%= link_to "Show", video %></td>
-      <td><%= link_to "Edit", edit_video_path(video) %></td>
-      <td><%= link_to "Destroy", video, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%=h video.user.name %></td>
+      <td><%= link_to "Show", [video.user, video] %></td>
+      <td><%= link_to "Edit", edit_user_video_path(video.user, video) %></td>
+      <td><%= link_to "Destroy", [video.user, video], :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Video", new_video_path %></p>
+<p><%= link_to "New Video", new_user_video_path(@current_user) %></p>

@@ -3,6 +3,6 @@
 <%= render :partial => 'form' %>
 
 <p>
-  <%= link_to "Show", @image %> |
-  <%= link_to "View All", images_path %>
+  <%= link_to "Show", [@image.user, @image] %> |
+  <%= link_to "View All", user_images_path(@image.user) %>
 </p>

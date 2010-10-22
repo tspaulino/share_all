@@ -3,6 +3,6 @@
 <%= render :partial => 'form' %>
 
 <p>
-  <%= link_to "Show", @music %> |
-  <%= link_to "View All", musics_path %>
+  <%= link_to "Show", [@music.user, @music] %> |
+  <%= link_to "View All", user_musics_path(@music.user) %>
 </p>

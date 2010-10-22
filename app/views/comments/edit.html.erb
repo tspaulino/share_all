@@ -4,5 +4,5 @@
 
 <p>
   <%= link_to "Show", @comment %> |
-  <%= link_to "View All", comments_path %>
+  <%= link_to "View All", polymorphic_comments_path(@current_user,@comment.commentable, @comment) %>
 </p>

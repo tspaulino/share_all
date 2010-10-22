@@ -4,13 +4,9 @@
   <strong>Name:</strong>
   <%=h @document.name %>
 </p>
-<p>
-  <strong>User:</strong>
-  <%=h @document.user %>
-</p>
 
 <p>
-  <%= link_to "Edit", edit_document_path(@document) %> |
-  <%= link_to "Destroy", @document, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", documents_path %>
+  <%= link_to "Edit", edit_user_document_path(@current_user, @document) %> |
+  <%= link_to "Destroy", [@current_user, @document], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", user_documents_path(@current_user) %>
 </p>

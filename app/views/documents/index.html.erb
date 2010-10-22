@@ -8,12 +8,12 @@
   <% for document in @documents %>
     <tr>
       <td><%=h document.name %></td>
-      <td><%=h document.user %></td>
-      <td><%= link_to "Show", document %></td>
-      <td><%= link_to "Edit", edit_document_path(document) %></td>
-      <td><%= link_to "Destroy", document, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%=h document.user.name %></td>
+      <td><%= link_to "Show", [document.user, document] %></td>
+      <td><%= link_to "Edit", edit_user_document_path(@current_user, document) %></td>
+      <td><%= link_to "Destroy", [document.user, document], :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Document", new_document_path %></p>
+<p><%= link_to "New Document", new_user_document_path(@current_user) %></p>

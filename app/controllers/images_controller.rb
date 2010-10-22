@@ -1,44 +1,44 @@
 class ImagesController < ApplicationController
   def index
-    @images = Image.all
+    @images = @current_user.images.all
   end
   
   def show
-    @image = Image.find(params[:id])
+    @image = @current_user.images.find(params[:id])
   end
   
   def new
-    @image = Image.new
+    @image = @current_user.images.build
   end
   
   def create
-    @image = Image.new(params[:image])
+    @image = @current_user.images.build(params[:image])
     if @image.save
       flash[:notice] = "Successfully created image."
-      redirect_to @image
+      redirect_to [@image.user, @image]
     else
       render :action => 'new'
     end
   end
   
   def edit
-    @image = Image.find(params[:id])
+    @image = @current_user.images.find(params[:id])
   end
   
   def update
-    @image = Image.find(params[:id])
+    @image = @current_user.images.find(params[:id])
     if @image.update_attributes(params[:image])
       flash[:notice] = "Successfully updated image."
-      redirect_to @image
+      redirect_to [@image.user, @image]
     else
       render :action => 'edit'
     end
   end
   
   def destroy
-    @image = Image.find(params[:id])
+    @image = @current_user.images.find(params[:id])
     @image.destroy
     flash[:notice] = "Successfully destroyed image."
-    redirect_to images_url
+    redirect_to :back
   end
 end
