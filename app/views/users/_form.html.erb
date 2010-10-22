@@ -1,0 +1,32 @@
+<% form_for @user do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :login %><br />
+    <%= f.text_field :login %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :hometown %><br />
+    <%= f.text_field :hometown %>
+  </p>
+  <p>
+    <%= f.label :persistence_token %><br />
+    <%= f.text_field :persistence_token %>
+  </p>
+  <p>
+    <%= f.label :crypted_password %><br />
+    <%= f.text_field :crypted_password %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

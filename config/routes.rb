@@ -1,4 +1,21 @@
 ActionController::Routing::Routes.draw do |map|
+
+  map.resources :users do |user|   
+    user.resources :videos
+    user.resources :musics   
+    user.resources :images   
+    user.resources :documents
+    user.resources :events
+    user.resources :comments
+    user.resources :groups    
+  end
+  
+  map.login '/login', :controller => "user_sessions", :action => "login"     
+  map.logout '/logout', :controller => "user_sessions", :action => "logout"     
+  map.signup '/signup', :controller => "users", :action => "new"
+   
+  map.root :controller => "users", :action => "show"   
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

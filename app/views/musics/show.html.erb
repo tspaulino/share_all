@@ -1,0 +1,20 @@
+<% title "Music" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @music.name %>
+</p>
+<p>
+  <strong>Author:</strong>
+  <%=h @music.author %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%=h @music.user %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_music_path(@music) %> |
+  <%= link_to "Destroy", @music, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", musics_path %>
+</p>

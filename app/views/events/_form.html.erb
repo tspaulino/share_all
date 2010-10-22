@@ -1,0 +1,36 @@
+<% form_for @event do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :local %><br />
+    <%= f.text_field :local %>
+  </p>
+  <p>
+    <%= f.label :start_time %><br />
+    <%= f.datetime_select :start_time %>
+  </p>
+  <p>
+    <%= f.label :end_time %><br />
+    <%= f.datetime_select :end_time %>
+  </p>
+  <p>
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </p>
+  <p>
+    <%= f.label :longitude %><br />
+    <%= f.text_field :longitude %>
+  </p>
+  <p>
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

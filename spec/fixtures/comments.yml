@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  text: MyString
+  user: 
+  approved: false
+  commentable_type: MyString
+  commentable_id: 1
+
+two:
+  text: MyString
+  user: 
+  approved: false
+  commentable_type: MyString
+  commentable_id: 1

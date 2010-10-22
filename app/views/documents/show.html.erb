@@ -1,0 +1,16 @@
+<% title "Document" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @document.name %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%=h @document.user %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_document_path(@document) %> |
+  <%= link_to "Destroy", @document, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", documents_path %>
+</p>

@@ -1,0 +1,21 @@
+<% title "Musics" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Author</th>
+    <th>User</th>
+  </tr>
+  <% for music in @musics %>
+    <tr>
+      <td><%=h music.name %></td>
+      <td><%=h music.author %></td>
+      <td><%=h music.user %></td>
+      <td><%= link_to "Show", music %></td>
+      <td><%= link_to "Edit", edit_music_path(music) %></td>
+      <td><%= link_to "Destroy", music, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Music", new_music_path %></p>

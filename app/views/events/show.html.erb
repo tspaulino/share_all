@@ -1,0 +1,40 @@
+<% title "Event" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @event.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%=h @event.description %>
+</p>
+<p>
+  <strong>Local:</strong>
+  <%=h @event.local %>
+</p>
+<p>
+  <strong>Start Time:</strong>
+  <%=h @event.start_time %>
+</p>
+<p>
+  <strong>End Time:</strong>
+  <%=h @event.end_time %>
+</p>
+<p>
+  <strong>Latitude:</strong>
+  <%=h @event.latitude %>
+</p>
+<p>
+  <strong>Longitude:</strong>
+  <%=h @event.longitude %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%=h @event.user %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_event_path(@event) %> |
+  <%= link_to "Destroy", @event, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", events_path %>
+</p>
