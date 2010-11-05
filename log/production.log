@@ -1,0 +1,458 @@
+
+
+Processing UsersController#show (for ::1 at 2010-10-22 18:01:02) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+Redirected to http://app.shareall.com/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 25ms (DB: 0) | 302 Found [http://app.shareall.com/]
+
+
+Processing UserSessionsController#login (for ::1 at 2010-10-22 18:01:02) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session, :url => login_url do |f| %>
+4:   <%= f.label :login %><br />
+5:   <%= f.text_field :login %><br />
+6:   <br />
+7:   <%= f.label :password %><br />
+8:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:5
+    app/views/user_sessions/new.html.erb:3
+    app/controllers/user_sessions_controller.rb:15:in `login'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:418:in `start_request_handler'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:358:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/utils.rb:184:in `safe_fork'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:354:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:163:in `start'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for ::1 at 2010-10-22 18:01:32) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+Redirected to http://app.shareall.com/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 513ms (DB: 0) | 302 Found [http://app.shareall.com/]
+
+
+Processing UserSessionsController#login (for ::1 at 2010-10-22 18:01:33) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session, :url => login_url do |f| %>
+4:   <%= f.label :login %><br />
+5:   <%= f.text_field :login %><br />
+6:   <br />
+7:   <%= f.label :password %><br />
+8:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:5
+    app/views/user_sessions/new.html.erb:3
+    app/controllers/user_sessions_controller.rb:15:in `login'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:418:in `start_request_handler'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:358:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/utils.rb:184:in `safe_fork'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:354:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:163:in `start'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#login (for ::1 at 2010-10-22 18:02:05) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session, :url => login_url do |f| %>
+4:   <%= f.label :login %><br />
+5:   <%= f.text_field :login %><br />
+6:   <br />
+7:   <%= f.label :password %><br />
+8:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:5
+    app/views/user_sessions/new.html.erb:3
+    app/controllers/user_sessions_controller.rb:15:in `login'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:418:in `start_request_handler'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:358:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/utils.rb:184:in `safe_fork'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:354:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:163:in `start'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#login (for ::1 at 2010-10-22 18:02:06) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session, :url => login_url do |f| %>
+4:   <%= f.label :login %><br />
+5:   <%= f.text_field :login %><br />
+6:   <br />
+7:   <%= f.label :password %><br />
+8:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:5
+    app/views/user_sessions/new.html.erb:3
+    app/controllers/user_sessions_controller.rb:15:in `login'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:418:in `start_request_handler'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:358:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/utils.rb:184:in `safe_fork'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:354:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:163:in `start'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#login (for ::1 at 2010-10-22 18:02:07) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session, :url => login_url do |f| %>
+4:   <%= f.label :login %><br />
+5:   <%= f.text_field :login %><br />
+6:   <br />
+7:   <%= f.label :password %><br />
+8:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:5
+    app/views/user_sessions/new.html.erb:3
+    app/controllers/user_sessions_controller.rb:15:in `login'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:418:in `start_request_handler'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:358:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/utils.rb:184:in `safe_fork'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:354:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:163:in `start'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#login (for ::1 at 2010-10-22 18:02:08) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session, :url => login_url do |f| %>
+4:   <%= f.label :login %><br />
+5:   <%= f.text_field :login %><br />
+6:   <br />
+7:   <%= f.label :password %><br />
+8:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:5
+    app/views/user_sessions/new.html.erb:3
+    app/controllers/user_sessions_controller.rb:15:in `login'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:418:in `start_request_handler'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:358:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/utils.rb:184:in `safe_fork'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:354:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:163:in `start'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#login (for ::1 at 2010-10-22 18:04:32) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session, :url => login_url do |f| %>
+4:   <%= f.label :login %><br />
+5:   <%= f.text_field :login %><br />
+6:   <br />
+7:   <%= f.label :password %><br />
+8:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:5
+    app/views/user_sessions/new.html.erb:3
+    app/controllers/user_sessions_controller.rb:15:in `login'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:418:in `start_request_handler'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:358:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/utils.rb:184:in `safe_fork'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:354:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:163:in `start'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for ::1 at 2010-10-22 21:44:50) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+Redirected to http://app.shareall.com/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 34ms (DB: 0) | 302 Found [http://app.shareall.com/]
+
+
+Processing UserSessionsController#login (for ::1 at 2010-10-22 21:44:50) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session, :url => login_url do |f| %>
+4:   <%= f.label :login %><br />
+5:   <%= f.text_field :login %><br />
+6:   <br />
+7:   <%= f.label :password %><br />
+8:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:5
+    app/views/user_sessions/new.html.erb:3
+    app/controllers/user_sessions_controller.rb:15:in `login'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:418:in `start_request_handler'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:358:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/utils.rb:184:in `safe_fork'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:354:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:163:in `start'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-04 10:16:16) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+Redirected to http://app.shareall.com/login
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 46ms (DB: 0) | 302 Found [http://app.shareall.com/]
+
+
+Processing UserSessionsController#login (for 127.0.0.1 at 2010-11-04 10:16:16) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session, :url => login_url do |f| %>
+4:   <%= f.label :login %><br />
+5:   <%= f.text_field :login %><br />
+6:   <br />
+7:   <%= f.label :password %><br />
+8:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:5
+    app/views/user_sessions/new.html.erb:3
+    app/controllers/user_sessions_controller.rb:15:in `login'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:418:in `start_request_handler'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:358:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/utils.rb:184:in `safe_fork'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:354:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:163:in `start'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#login (for 127.0.0.1 at 2010-11-04 17:36:58) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session, :url => login_url do |f| %>
+4:   <%= f.label :login %><br />
+5:   <%= f.text_field :login %><br />
+6:   <br />
+7:   <%= f.label :password %><br />
+8:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:5
+    app/views/user_sessions/new.html.erb:3
+    app/controllers/user_sessions_controller.rb:15:in `login'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/rack/request_handler.rb:92:in `process_request'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:418:in `start_request_handler'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:358:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/utils.rb:184:in `safe_fork'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:354:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:163:in `start'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/railz/application_spawner.rb:213:in `start'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `__send__'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'
+    /Users/tiago/.rvm/gems/ruby-1.8.7-p174/gems/passenger-2.2.11/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'
+
+Rendering rescues/layout (internal_server_error)

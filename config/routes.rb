@@ -5,16 +5,16 @@ ActionController::Routing::Routes.draw do |map|
     user.resources :musics, :has_many => :comments         
     user.resources :images, :has_many => :comments
     user.resources :documents, :has_many => :comments
-    user.resources :events, :has_many => :comments  
-    user.resources :groups, :has_many => :comments
+    user.resources :events, :member => {:join => :any }, :has_many => :comments  
+    user.resources :groups, :member => {:join => :any }, :has_many => :comments
     user.resources :comments        
   end
-  
+      
   map.login '/login', :controller => "user_sessions", :action => "login"     
   map.logout '/logout', :controller => "user_sessions", :action => "logout"     
   map.signup '/signup', :controller => "users", :action => "new"
    
-  map.root :controller => "users", :action => "show"   
+  map.root :controller => "user_sessions", :action => "login"   
 
   # The priority is based upon order of creation: first created -> highest priority.
 

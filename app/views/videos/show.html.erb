@@ -12,9 +12,15 @@
   <strong>User:</strong>
   <%=h @video.user.name %>
 </p>
+<p>
+  <strong>Vídeo:</strong>
+  <%=h @video.video.url %>
+</p>
+
 
 <p>
   <%= link_to "Edit", edit_user_video_path(@video.user, @video) %> |
   <%= link_to "Destroy", [@video.user, @video], :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", user_videos_path(@video.user) %>
+  <%= link_to "View All", user_videos_path(@video.user) %>  |  
+  <%= link_to "Leave a comment", new_user_video_comment_url(@current_user, @video, :klazz => @video.class.to_s, :object_id => @video.id)%>
 </p>

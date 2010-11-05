@@ -1,4 +1,4 @@
-<% semantic_form_for [@current_user, @music] do |f| %>
+<% semantic_form_for [@current_user, @music], :html => {:multipart => true} do |f| %>
   <% f.inputs @music do %>
     <p>
       <%= f.input :name %>

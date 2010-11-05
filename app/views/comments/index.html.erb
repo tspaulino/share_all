@@ -9,7 +9,6 @@
     <tr>
       <td><%=h comment.user.name %></td>
       <td><%=h comment.approved %></td>
-      <td><%= link_to "Show", edit_polymorphic_comment_url([@current_user, comment.commentable, comment]) %></td>
       <td><%= link_to "Destroy", comment, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>

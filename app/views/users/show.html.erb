@@ -1,5 +1,7 @@
 <% title "User" %>
-
+<p>
+  <%= image_tag(@user.avatar.url(:thumb), :alt => "My Avatar")%>
+</p>
 <p>
   <strong>Name:</strong>
   <%=h @user.name %>
@@ -22,8 +24,13 @@
 </p>
 <p>
   <%= link_to("Comments", user_comments_url(@user)) %><br />
-  <%= link_to("Groups", user_groups_url(@user)) %><br />                              
-</p>
+  <%= link_to("Groups", user_groups_url(@user)) %><br />    
+  <%= link_to("Musics", user_musics_url(@user)) %><br />      
+  <%= link_to("Videos", user_videos_url(@user)) %><br />      
+  <%= link_to("Images", user_images_url(@user)) %><br />            
+  <%= link_to("Documents", user_documents_url(@user)) %><br /> 
+  <%= link_to("Events", user_events_url(@user)) %><br />                  
+</p>  
 <p>
   <%= link_to "Edit", edit_user_path(@user) %> |
   <%= link_to "Destroy", @user, :confirm => 'Are you sure?', :method => :delete %> |

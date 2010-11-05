@@ -13,6 +13,14 @@
   <%=h @group.user.name %>
 </p>
 
+<% if @group.members %>             
+  <strong><%= @group.members.count %> members</strong><br />
+  <% @group.members.each do |member|%>
+    <%= member.name %>
+    <br />
+  <% end %>
+<% end %>     
+<%= link_to "Participate", :controller => "groups", :action => "join", :method => :post, :user_id => @current_user.id, :id => @group.id %>  
 <p>
   <%= link_to "Edit", edit_user_group_path(@group.user, @group) %> |
   <%= link_to "Destroy", [@group.user, @group], :confirm => 'Are you sure?', :method => :delete %> |

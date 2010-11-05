@@ -12,6 +12,10 @@
   <strong>User:</strong>
   <%=h @image.user.name %>
 </p>
+<p>
+  <strong>Image</strong>
+  <%= image_tag(@image.image.url)%>
+</p>
 
 <p>
   <%= link_to "Edit", edit_user_image_path(@image.user, @image) %> |

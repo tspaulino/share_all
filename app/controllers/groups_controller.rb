@@ -40,5 +40,18 @@ class GroupsController < ApplicationController
     @group.destroy
     flash[:notice] = "Successfully destroyed group."
     redirect_to :back
+  end   
+  
+  def join
+    @group = Group.find(params[:id])           
+    user = User.find(params[:user_id])             
+    if @group.members.include?(user)
+      flash[:error] = "You're already participating! Can't subscribe again."
+      redirect_to :back
+    end
+    @group.members << user
+    @group.save           
+    flash[:notice] = "Participating on group!"
+    redirect_to [@group.user, @group]       
   end
 end

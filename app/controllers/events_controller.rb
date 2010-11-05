@@ -41,4 +41,17 @@ class EventsController < ApplicationController
     flash[:notice] = "Successfully destroyed event."
     redirect_to :back
   end
+  
+  def join
+    @event = Event.find(params[:id])           
+    user = User.find(params[:user_id])             
+    if @event.members.include?(user)
+      flash[:error] = "You're already participating! Can't subscribe again."
+      redirect_to [@current_user, @event]
+    end
+    @event.members << user
+    @event.save           
+    flash[:notice] = "Participating on event!"
+    redirect_to user_events_url(@event.user, @event)       
+  end
 end

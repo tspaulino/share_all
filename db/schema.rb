@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101022024306) do
+ActiveRecord::Schema.define(:version => 20101104180123) do
 
   create_table "comments", :force => true do |t|
     t.text     "text"
@@ -89,6 +89,20 @@ ActiveRecord::Schema.define(:version => 20101022024306) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.boolean  "active",              :default => true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users_events", :id => false, :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users_groups", :id => false, :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

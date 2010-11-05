@@ -1,4 +1,4 @@
-<% semantic_form_for [@current_user, @video] do |f| %>
+<% semantic_form_for [@current_user, @video], :html => {:multipart => true} do |f| %>
   <% f.inputs @video do %>
     <p>
       <%= f.input :name %>

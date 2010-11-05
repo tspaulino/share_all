@@ -1,44 +1,44 @@
 class VideosController < ApplicationController
   def index
-    @videos = Video.all
+    @videos = @current_user.videos.all
   end
   
   def show
-    @video = Video.find(params[:id])
+    @video = @current_user.videos.find(params[:id])
   end
   
   def new
-    @video = Video.new
+    @video = @current_user.videos.build
   end
   
   def create
-    @video = Video.new(params[:video])
+    @video = @current_user.videos.build(params[:video])
     if @video.save
       flash[:notice] = "Successfully created video."
-      redirect_to @video
+      redirect_to [@current_user, @video]
     else
       render :action => 'new'
     end
   end
   
   def edit
-    @video = Video.find(params[:id])
+    @video = @current_user.videos.find(params[:id])
   end
   
   def update
-    @video = Video.find(params[:id])
+    @video = @current_user.videos.find(params[:id])
     if @video.update_attributes(params[:video])
       flash[:notice] = "Successfully updated video."
-      redirect_to @video
+      redirect_to [@current_user, @video]
     else
       render :action => 'edit'
     end
   end
   
   def destroy
-    @video = Video.find(params[:id])
+    @video = @current_user.videos.find(params[:id])
     @video.destroy
     flash[:notice] = "Successfully destroyed video."
-    redirect_to videos_url
+    redirect_to :back
   end
 end

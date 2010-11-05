@@ -6,7 +6,7 @@
 </p>
 <p>
   <strong>User:</strong>
-  <%=h @comment.user %>
+  <%=h @comment.user.name %>
 </p>
 <p>
   <strong>Approved:</strong>
@@ -14,5 +14,5 @@
 </p>
 
 <p>
-  <%= link_to "View All", polymorphic_url([@current_user, @comment.commentable, :comments]) %>
+  <%= link_to "View All", polymorphic_url([@comment.commentable]) %>
 </p>
