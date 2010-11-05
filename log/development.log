@@ -9074,3 +9074,176 @@ ActionController::DoubleRenderError (Render and/or redirect were called multiple
 Rendered rescues/_trace (18.4ms)
 Rendered rescues/_request_and_response (0.3ms)
 Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (75.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (18.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20101022021805)
+Migrating to CreateGroups (20101022021903)
+Migrating to CreateEvents (20101022022020)
+Migrating to CreateComments (20101022022807)
+Migrating to CreateDocuments (20101022023008)
+Migrating to CreateVideos (20101022023804)
+Migrating to CreateImages (20101022024209)
+Migrating to CreateMusics (20101022024306)
+Migrating to CreateUsersEvents (20101104174720)
+Migrating to CreateUsersGroups (20101104180123)
+Migrating to CreateVotes (20101105135708)
+  [4;36;1mSQL (237.5ms)[0m   [0;1mCREATE TABLE `votes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `like` int(11), `dislike` int(11), `votable_type` varchar(255), `votable_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101105135708')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.4ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mdescribe `comments`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSHOW KEYS FROM `comments`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `documents`[0m
+  [4;35;1mSQL (3.3ms)[0m   [0mdescribe `documents`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW KEYS FROM `documents`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mSQL (5.9ms)[0m   [0;1mdescribe `events`[0m
+  [4;35;1mSQL (3.2ms)[0m   [0mSHOW KEYS FROM `events`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `groups`[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mdescribe `groups`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW KEYS FROM `groups`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `images`[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mdescribe `images`[0m
+  [4;35;1mSQL (8.7ms)[0m   [0mSHOW KEYS FROM `images`[0m
+  [4;36;1mSQL (11.0ms)[0m   [0;1mSHOW FIELDS FROM `musics`[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mdescribe `musics`[0m
+  [4;36;1mSQL (5.9ms)[0m   [0;1mSHOW KEYS FROM `musics`[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (21.4ms)[0m   [0;1mSHOW FIELDS FROM `users_events`[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mdescribe `users_events`[0m
+  [4;36;1mSQL (50.4ms)[0m   [0;1mSHOW KEYS FROM `users_events`[0m
+  [4;35;1mSQL (31.7ms)[0m   [0mSHOW FIELDS FROM `users_groups`[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mdescribe `users_groups`[0m
+  [4;35;1mSQL (16.6ms)[0m   [0mSHOW KEYS FROM `users_groups`[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mSHOW FIELDS FROM `videos`[0m
+  [4;35;1mSQL (3.6ms)[0m   [0mdescribe `videos`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW KEYS FROM `videos`[0m
+  [4;35;1mSQL (16.8ms)[0m   [0mSHOW FIELDS FROM `votes`[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mdescribe `votes`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW KEYS FROM `votes`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mImage Load (0.3ms)[0m   [0;1mSELECT * FROM `images` ORDER BY images.id DESC LIMIT 1[0m
+  [4;35;1mImage Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `images`[0m
+  [4;36;1mVote Load (0.4ms)[0m   [0;1mSELECT * FROM `votes` WHERE (`votes`.votable_id = 3 AND `votes`.votable_type = 'Image') LIMIT 1[0m
+  [4;35;1mVote Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `votes`[0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM `votes` WHERE (`votes`.votable_id = 3 AND `votes`.votable_type = 'Image') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mVote Create (0.2ms)[0m   [0;1mINSERT INTO `votes` (`created_at`, `updated_at`, `like`, `dislike`, `votable_type`, `votable_id`) VALUES('2010-11-05 13:59:17', '2010-11-05 13:59:17', NULL, NULL, 'Image', 3)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+[paperclip] Saving attachments.
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVotes (20101105135708)
+  [4;36;1mSQL (114.1ms)[0m   [0;1mDROP TABLE `votes`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20101105135708'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mdescribe `comments`[0m
+  [4;35;1mSQL (31.1ms)[0m   [0mSHOW KEYS FROM `comments`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW FIELDS FROM `documents`[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mdescribe `documents`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW KEYS FROM `documents`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mdescribe `events`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSHOW KEYS FROM `events`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `groups`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mdescribe `groups`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `groups`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `images`[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mdescribe `images`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW KEYS FROM `images`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `musics`[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mdescribe `musics`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW KEYS FROM `musics`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users_events`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mdescribe `users_events`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `users_events`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `users_groups`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mdescribe `users_groups`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `users_groups`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `videos`[0m
+  [4;35;1mSQL (4.6ms)[0m   [0mdescribe `videos`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW KEYS FROM `videos`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20101022021805)
+Migrating to CreateGroups (20101022021903)
+Migrating to CreateEvents (20101022022020)
+Migrating to CreateComments (20101022022807)
+Migrating to CreateDocuments (20101022023008)
+Migrating to CreateVideos (20101022023804)
+Migrating to CreateImages (20101022024209)
+Migrating to CreateMusics (20101022024306)
+Migrating to CreateUsersEvents (20101104174720)
+Migrating to CreateUsersGroups (20101104180123)
+Migrating to CreateVotes (20101105135708)
+  [4;36;1mSQL (123.5ms)[0m   [0;1mCREATE TABLE `votes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `like` int(11) DEFAULT 0, `dislike` int(11) DEFAULT 0, `votable_type` varchar(255), `votable_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101105135708')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (23.6ms)[0m   [0;1mdescribe `comments`[0m
+  [4;35;1mSQL (14.3ms)[0m   [0mSHOW KEYS FROM `comments`[0m
+  [4;36;1mSQL (7.8ms)[0m   [0;1mSHOW FIELDS FROM `documents`[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mdescribe `documents`[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSHOW KEYS FROM `documents`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1mdescribe `events`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `events`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSHOW FIELDS FROM `groups`[0m
+  [4;35;1mSQL (3.3ms)[0m   [0mdescribe `groups`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `groups`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `images`[0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mdescribe `images`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `images`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW FIELDS FROM `musics`[0m
+  [4;35;1mSQL (3.5ms)[0m   [0mdescribe `musics`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `musics`[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users_events`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mdescribe `users_events`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW KEYS FROM `users_events`[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mSHOW FIELDS FROM `users_groups`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mdescribe `users_groups`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `users_groups`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `videos`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mdescribe `videos`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW KEYS FROM `videos`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `votes`[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1mdescribe `votes`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `votes`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mImage Load (0.3ms)[0m   [0;1mSELECT * FROM `images` ORDER BY images.id DESC LIMIT 1[0m
+  [4;35;1mImage Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `images`[0m
+  [4;36;1mVote Load (0.6ms)[0m   [0;1mSELECT * FROM `votes` WHERE (`votes`.votable_id = 3 AND `votes`.votable_type = 'Image') LIMIT 1[0m
+  [4;35;1mVote Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `votes`[0m
+  [4;36;1mVote Load (0.3ms)[0m   [0;1mSELECT * FROM `votes` WHERE (`votes`.votable_id = 3 AND `votes`.votable_type = 'Image') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mVote Create (0.3ms)[0m   [0;1mINSERT INTO `votes` (`created_at`, `updated_at`, `like`, `dislike`, `votable_type`, `votable_id`) VALUES('2010-11-05 14:00:30', '2010-11-05 14:00:30', 0, 0, 'Image', 3)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m

@@ -3,4 +3,5 @@ class Document < ActiveRecord::Base
   has_attached_file :file
   validates_presence_of :name, :message => "Mandatory field!"      
   has_many :comments, :as => :commentable
+  has_one :vote, :as => :votable
 end

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101104180123) do
+ActiveRecord::Schema.define(:version => 20101105135708) do
 
   create_table "comments", :force => true do |t|
     t.text     "text"
@@ -115,6 +115,15 @@ ActiveRecord::Schema.define(:version => 20101104180123) do
     t.string   "video_content_type"
     t.integer  "video_file_size"
     t.datetime "video_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "votes", :force => true do |t|
+    t.integer  "like",         :default => 0
+    t.integer  "dislike",      :default => 0
+    t.string   "votable_type"
+    t.integer  "votable_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

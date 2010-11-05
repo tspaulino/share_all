@@ -3,4 +3,5 @@ class Video < ActiveRecord::Base
   has_attached_file :video
   validates_presence_of :name
   has_many :comments, :as => :commentable
+  has_one :vote, :as => :votable
 end
