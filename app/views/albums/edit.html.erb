@@ -1,0 +1,8 @@
+<% title "Edit Album" %>
+
+<%= render :partial => 'form' %>
+
+<p>
+  <%= link_to "Show", [@album.user, @album] %> |
+  <%= link_to "View All", user_albums_path(@album.user) %>
+</p>

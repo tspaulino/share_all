@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>           
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
+    <script src="javascripts/jquery.jplayer.min.js"></script>    
+    <script>
+    $("#jquery_jplayer").jPlayer({
+       nativeSupport: true, oggSupport: true, customCssIds: false
+    });
+    /*$(document).ready(function(){   
+      
+      /*$(function() { // executed when $(document).ready()
+        $("#jquery_jplayer").jPlayer( {
+          ready: function () {
+            this.element.jPlayer("setFile", "/system/musics/1/original/03 Zé da Caroço.mp3?1289618560").jPlayer("play"); // Auto-Plays the file
+          },
+          swfPath: "javascripts",
+          height: 200,
+          width: 400,
+          errorAlerts: true,
+          warningAlerts: true,
+          nativeSupport: false     
+          
+        });
+      });
+      
+      
+    });*/      
+    </script>
+  </head>
+  <body>
+    <div id="jquery_jplayer">      
+    </div>  
+  </body>
+</html>

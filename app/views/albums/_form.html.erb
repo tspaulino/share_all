@@ -1,0 +1,14 @@
+<% semantic_form_for [@current_user, @album] do |f| %>
+  <%= f.error_messages %>    
+  <% f.inputs @album do %>
+  <p>
+    <%= f.input :name, :required => true %>
+  </p>
+  <p>
+    <%= f.input :description, :required => true %>
+  </p>
+  <% end %>
+  <% f.buttons do %>  
+    <p><%= f.commit_button %></p>
+  <% end %>  
+<% end %>

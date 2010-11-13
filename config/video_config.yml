@@ -1,0 +1,6 @@
+developer_tag: your_developer_tag
+auth_sub:
+  secure: 0
+  session: 0
+  developer_key: AI39si5S6Cw3Ms7Kh0MY1xxZVLMUzc5t4FDPyB3_ROPPEWiqV6H9mZ1rmSBvquuVN29PxQ9jFa9TZeZTScXhTipkI4ldTOVEIw
+  #client_key: And-Here-Goes-Your-Client-Key
