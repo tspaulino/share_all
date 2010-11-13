@@ -11,10 +11,11 @@
 <p>
   <strong>User:</strong>
   <%=h @music.user.name %>
-</p>           
+</p>
+           
 <p>
   <strong>Music:</strong>
-  <%=h @music.music.url %>
+  <%= render :partial => "shared/player" %>
 </p>           
 <p>
   <%= link_to "Edit", edit_user_music_path(@music.user, @music) %> |
