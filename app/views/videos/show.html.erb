@@ -14,13 +14,17 @@
 </p>
 <p>
   <strong>Vídeo:</strong>
-  <%=h @video.video.url %>
+  
+  <%= render :partial => "shared/player", :locals => { :file_url => @video.video.url } %>
 </p>
-
-
+<p>
+  <%= render :partial => "shared/comments_view", :locals => {:object => @video}%>
+</p>
 <p>
   <%= link_to "Edit", edit_user_video_path(@video.user, @video) %> |
   <%= link_to "Destroy", [@video.user, @video], :confirm => 'Are you sure?', :method => :delete %> |
   <%= link_to "View All", user_videos_path(@video.user) %>  |  
-  <%= link_to "Leave a comment", new_user_video_comment_url(@current_user, @video, :klazz => @video.class.to_s, :object_id => @video.id)%>
+  <%= link_to_function "Leave a comment" do |page|
+      page.insert_html :bottom, :comment, :partial => "shared/comments_form", :object => @video.comments.build, :locals => {:klazz => @video.class.to_s.downcase} 
+     end %>
 </p>

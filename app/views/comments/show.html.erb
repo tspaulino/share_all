@@ -11,8 +11,8 @@
 <p>
   <strong>Approved:</strong>
   <%=h @comment.approved %>
-</p>
-
+</p>                 
 <p>
-  <%= link_to "View All", polymorphic_url([@comment.commentable]) %>
+  <strong>For:</strong>
+  <%=h @comment.commentable.name %>
 </p>

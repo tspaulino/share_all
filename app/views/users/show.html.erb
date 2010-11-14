@@ -22,6 +22,19 @@
   <strong>Hometown:</strong>
   <%=h @user.hometown %>
 </p>
+<% if @user.comments_received %>
+  <div id="comments">
+    <strong><%= @user.comments_received.count %> Comments</strong><br />
+    <% @user.comments_received.each do |comment| %>
+      <strong><%= comment.user.name %> said:</strong>
+      <p>
+        <%= comment.text%>
+      </p>        
+    <% end %>
+  </div>
+<% end %>
+<div id="comment">
+</div>
 <p>
   <%= link_to("Comments", user_comments_url(@user)) %><br />
   <%= link_to("Groups", user_groups_url(@user)) %><br />    
@@ -35,4 +48,8 @@
   <%= link_to "Edit", edit_user_path(@user) %> |
   <%= link_to "Destroy", @user, :confirm => 'Are you sure?', :method => :delete %> |
   <%= link_to "View All", users_path %>
+  <%= link_to_function "Leave a comment" do |page|
+        page.insert_html :bottom, :comment, :partial => "shared/comments_form", :object => @user.comments_received.build, :locals => {:klazz => @user.class.to_s.downcase} 
+  end %>
+  
 </p>

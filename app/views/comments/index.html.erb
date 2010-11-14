@@ -3,13 +3,14 @@
 <table>
   <tr>
     <th>Author</th>
-    <th>Approved</th>
+    <th>Status</th>
   </tr>
   <% for comment in @comments %>
     <tr>
       <td><%=h comment.user.name %></td>
-      <td><%=h comment.approved %></td>
-      <td><%= link_to "Destroy", comment, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= comment.approved ? "Aprovado" : "Pendente" %></td>
+      <td><%= link_to "Show", [comment.user, comment] %></td>
+      <td><%= link_to "Destroy", [comment.user, comment], :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>

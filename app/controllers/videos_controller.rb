@@ -4,7 +4,7 @@ class VideosController < ApplicationController
   end
   
   def show
-    @video = @current_user.videos.find(params[:id])
+    @video = Video.find(params[:id])
   end
   
   def new
@@ -13,7 +13,8 @@ class VideosController < ApplicationController
   
   def create
     @video = @current_user.videos.build(params[:video])
-    if @video.save
+    if @video.save       
+      @video.convert
       flash[:notice] = "Successfully created video."
       redirect_to [@current_user, @video]
     else

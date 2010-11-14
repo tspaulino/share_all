@@ -1,0 +1,15 @@
+<% semantic_form_for object, :url => comments_url, :method => :post do |f| %>       
+  <% f.inputs object do %>
+    <h2>New Comment</h2><br />
+    <br />
+    <p>
+      <%= f.input :text, :required => true %>
+    </p>   
+      <%= f.input :user_id, :as => :hidden, :value => @current_user.id %> 
+      <%= f.input :commentable_id, :as => :hidden, :value => params[:object_id] %>
+      <%= f.input :commentable_type, :as => :hidden, :value => params[:klazz] %>      
+  <% end %>
+  <% f.buttons do %>  
+    <p><%= f.commit_button %></p>
+  <% end %>
+<% end %>

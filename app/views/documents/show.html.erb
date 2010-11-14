@@ -4,9 +4,14 @@
   <strong>Name:</strong>
   <%=h @document.name %>
 </p>
-
+<p>
+  <%= render :partial => "shared/comments_view", :locals => {:object => @document}%>
+</p>
 <p>
   <%= link_to "Edit", edit_user_document_path(@current_user, @document) %> |
   <%= link_to "Destroy", [@current_user, @document], :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", user_documents_path(@current_user) %>
+  <%= link_to "View All", user_documents_path(@current_user) %>  |
+  <%= link_to_function "Leave a comment" do |page|
+        page.insert_html :bottom, :comment, :partial => "shared/comments_form", :object => @document.comments.build, :locals => {:klazz => @document.class.to_s.downcase} 
+  end %>
 </p>

@@ -1,5 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
-
+  
+  map.resources :comments
+  
   map.resources :users do |user|   
     user.resources :videos, :has_many => :comments
     user.resources :musics, :has_many => :comments         

@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   acts_as_authentic             
   has_attached_file :avatar, :styles => {:thumb => "150x150>"}
-  has_many :comments, :as => :commentable
+  has_many :comments_received, :class_name => "Comment", :as => :commentable    
+  has_many :comments
   has_many :groups
   has_many :events
   has_many :images

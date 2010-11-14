@@ -48,10 +48,11 @@ class EventsController < ApplicationController
     if @event.members.include?(user)
       flash[:error] = "You're already participating! Can't subscribe again."
       redirect_to [@current_user, @event]
-    end
-    @event.members << user
-    @event.save           
-    flash[:notice] = "Participating on event!"
-    redirect_to user_events_url(@event.user, @event)       
+    else
+      @event.members << user
+      @event.save           
+      flash[:notice] = "Participating on event!"
+      redirect_to [@event.user, @event] 
+    end      
   end
 end

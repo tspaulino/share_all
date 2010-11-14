@@ -11,14 +11,20 @@
 <p>
   <strong>User:</strong>
   <%=h @music.user.name %>
+</p>           
+<p>
+  <%= render :partial => "shared/player", :locals => {:file_url => @music.music.url} %>
+</p>
+<p>
+  <%= render :partial => "shared/comments_view", :locals => {:object => @music}%>
 </p>
            
 <p>
-  <strong>Music:</strong>
-  <%= render :partial => "shared/player" %>
-</p>           
-<p>
   <%= link_to "Edit", edit_user_music_path(@music.user, @music) %> |
   <%= link_to "Destroy", [@music.user, @music], :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", user_musics_path(@music.user) %>
+  <%= link_to "View All", user_musics_path(@music.user) %>  |  
+  <%= link_to_function "Leave a comment" do |page|
+        page.insert_html :bottom, :comment, :partial => "shared/comments_form", :object => @music.comments.build, :locals => {:klazz => @music.class.to_s.downcase} 
+  end %>
+
 </p>

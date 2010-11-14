@@ -9,7 +9,36 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101105135708) do
+ActiveRecord::Schema.define(:version => 20101113152739) do
+
+  create_table "albums", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "albuns_documents", :id => false, :force => true do |t|
+    t.integer  "album_id"
+    t.integer  "document_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "albuns_images", :id => false, :force => true do |t|
+    t.integer  "album_id"
+    t.integer  "image_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "albuns_musics", :id => false, :force => true do |t|
+    t.integer  "album_id"
+    t.integer  "music_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "comments", :force => true do |t|
     t.text     "text"
@@ -51,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20101105135708) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "permalink"
   end
 
   create_table "images", :force => true do |t|
@@ -91,6 +121,7 @@ ActiveRecord::Schema.define(:version => 20101105135708) do
     t.boolean  "active",              :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "permalink"
   end
 
   create_table "users_events", :id => false, :force => true do |t|
@@ -117,6 +148,7 @@ ActiveRecord::Schema.define(:version => 20101105135708) do
     t.datetime "video_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "state"
   end
 
   create_table "votes", :force => true do |t|

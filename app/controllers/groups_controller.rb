@@ -48,10 +48,11 @@ class GroupsController < ApplicationController
     if @group.members.include?(user)
       flash[:error] = "You're already participating! Can't subscribe again."
       redirect_to :back
-    end
-    @group.members << user
-    @group.save           
-    flash[:notice] = "Participating on group!"
-    redirect_to [@group.user, @group]       
+    else
+      @group.members << user
+      @group.save           
+      flash[:notice] = "Participating on group!"
+      redirect_to [@group.user, @group] 
+    end      
   end
 end

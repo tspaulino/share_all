@@ -6,21 +6,13 @@
     <th>Description</th>
     <th>Local</th>
     <th>Start Time</th>
-    <th>End Time</th>
-    <th>Latitude</th>
-    <th>Longitude</th>
-    <th>User</th>
   </tr>
   <% for event in @events %>
     <tr>
       <td><%=h event.name %></td>
       <td><%=h event.description %></td>
       <td><%=h event.location %></td>
-      <td><%=h event.start_time %></td>
-      <td><%=h event.end_time %></td>
-      <td><%=h event.latitude %></td>
-      <td><%=h event.longitude %></td>
-      <td><%=h event.user.name %></td>
+      <td><%=h event.start_time %></td>      
       <td><%= link_to "Show", [event.user, event] %></td>
       <td><%= link_to "Edit", edit_user_event_path(event.user, event) %></td>
       <td><%= link_to "Destroy", [event.user, event], :confirm => 'Are you sure?', :method => :delete %></td>

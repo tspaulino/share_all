@@ -13,12 +13,16 @@
   <%=h @image.user.name %>
 </p>
 <p>
-  <strong>Image</strong>
-  <%= image_tag(@image.image.url)%>
+  <%= image_tag(@image.image.url(:medium))%>
 </p>
-
+<p>
+  <%= render :partial => "shared/comments_view", :locals => {:object => @image}%>
+</p>
 <p>
   <%= link_to "Edit", edit_user_image_path(@image.user, @image) %> |
   <%= link_to "Destroy", [@image.user, @image], :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", user_images_path(@image.user) %>
+  <%= link_to "View All", user_images_path(@image.user) %> |
+  <%= link_to_function "Leave a comment" do |page|
+        page.insert_html :bottom, :comment, :partial => "shared/comments_form", :object => @image.comments.build, :locals => {:klazz => @image.class.to_s.downcase} 
+  end %>
 </p>

@@ -1,26 +1,22 @@
 class CommentsController < ApplicationController                
-  #before_filter :find_current_user
     
   def index
-    @comments = @current_user.comments.all
+    @comments = @current_user.comments_received.all
   end
   
   def show
-    @comment = @current_user.comments.find(params[:id])
+    @comment = Comment.find(params[:id])
   end
   
   def new
-    @comment = @current_user.comments.build
-    @comment.commentable_id = params[:object_id]
-    @comment.commentable_type = params[:klazz]
+    @comment = Comment.new
   end
   
   def create
-    @comment = @current_user.comments.build(params[:comment])
-    @comment.user = @current_user
+    @comment = Comment.new(params[:comment])
     if @comment.save
       flash[:notice] = "Successfully created comment."
-      redirect_to [@current_user, @comment]
+      redirect_to :back
     else
       render :action => 'new'
     end
@@ -41,7 +37,7 @@ class CommentsController < ApplicationController
   end
   
   def destroy
-    @comment = @current_user.comments.find(params[:id])
+    @comment = Comment.find(params[:id])
     @comment.destroy
     flash[:notice] = "Successfully destroyed comment."
     redirect_to :back

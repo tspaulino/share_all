@@ -13,16 +13,23 @@
   <%=h @group.user.name %>
 </p>
 
-<% if @group.members %>             
+<% unless @group.members.blank? %>             
   <strong><%= @group.members.count %> members</strong><br />
   <% @group.members.each do |member|%>
     <%= member.name %>
     <br />
   <% end %>
-<% end %>     
-<%= link_to "Participate", :controller => "groups", :action => "join", :method => :post, :user_id => @current_user.id, :id => @group.id %>  
+<% end %>
+<p>
+  <%= render :partial => "shared/comments_view", :locals => {:object => @group}%>
+</p>     
 <p>
   <%= link_to "Edit", edit_user_group_path(@group.user, @group) %> |
   <%= link_to "Destroy", [@group.user, @group], :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", user_groups_path(@group.user) %>
+  <%= link_to "View All", user_groups_path(@group.user) %>  |  
+  <%= link_to_function "Leave a comment" do |page|
+        page.insert_html :bottom, :comment, :partial => "shared/comments_form", :object => @group.comments.build, :locals => {:klazz => @group.class.to_s.downcase} 
+  end %>  |  
+  <%= link_to "Participate", :controller => "groups", :action => "join", :method => :post, :user_id => @current_user.id, :id => @group.id %>  
+  
 </p>
