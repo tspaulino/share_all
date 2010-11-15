@@ -1,10 +1,12 @@
-class ImagesController < ApplicationController
+class ImagesController < ApplicationController         
+  before_filter :find_owner
+  
   def index
-    @images = @current_user.images.all
+    @images = @owner.images.all
   end
   
   def show
-    @image = @current_user.images.find(params[:id])
+    @image = @owner.images.find(params[:id])
   end
   
   def new

@@ -19,6 +19,12 @@
 </p>
 <p>
   <%= render :partial => "shared/comments_view", :locals => {:object => @video}%>
+</p>   
+<p> 
+  <%= rating(@video) %>
+</p>
+<p>
+  <%= render :partial => "shared/vote", :locals => {:object => @video}%>
 </p>
 <p>
   <%= link_to "Edit", edit_user_video_path(@video.user, @video) %> |

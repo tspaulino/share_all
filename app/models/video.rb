@@ -8,7 +8,7 @@ class Video < ActiveRecord::Base
   has_attached_file :video
   validates_presence_of :name
   has_many :comments, :as => :commentable
-  has_one :vote, :as => :votable  
+  has_one :votes, :as => :votable  
   
   aasm_initial_state :pending
   aasm_state :pending
@@ -42,8 +42,10 @@ class Video < ActiveRecord::Base
   protected
 
   # This method creates the ffmpeg command that we'll be using
-  def convert_command       
+  def convert_command
+    #new_name = "#{File.basename(video.path, ".*").parameterize}.avi"            
     File.rename(video.path, File.join(File.dirname(video.path), "#{video_file_name.parameterize}.avi"))
+    #File.rename(video.path, File.join(File.dirname(video.path), n))
     original = File.join(File.dirname(video.path), "#{video_file_name.parameterize}.avi") 
     #update_attribute(:video_file_name, "#{video_file_name.parameterize}.avi")     
     flv = File.join(File.dirname(video.path), "#{video_file_name.parameterize}.flv")

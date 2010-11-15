@@ -18,6 +18,13 @@ class CreateAlbunsJoinsTables < ActiveRecord::Migration
       t.integer :image_id
 
       t.timestamps 
+    end            
+    
+    create_table :albuns_videos, :id => false do |t|
+      t.integer :album_id      
+      t.integer :video_id
+
+      t.timestamps 
     end
   end
 
@@ -25,5 +32,6 @@ class CreateAlbunsJoinsTables < ActiveRecord::Migration
     drop_table :albuns_musics
     drop_table :albuns_documents
     drop_table :albuns_images
+    drop_table :albuns_videos
   end
 end

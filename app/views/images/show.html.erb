@@ -17,6 +17,12 @@
 </p>
 <p>
   <%= render :partial => "shared/comments_view", :locals => {:object => @image}%>
+</p>                                                                    
+<p> 
+  <%= rating(@image) %>
+</p>
+<p>
+  <%= render :partial => "shared/vote", :locals => {:object => @image}%>
 </p>
 <p>
   <%= link_to "Edit", edit_user_image_path(@image.user, @image) %> |

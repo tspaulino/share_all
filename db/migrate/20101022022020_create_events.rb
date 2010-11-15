@@ -6,8 +6,8 @@ class CreateEvents < ActiveRecord::Migration
       t.string :location
       t.datetime :start_time
       t.datetime :end_time
-      t.integer :latitude
-      t.integer :longitude
+      t.float :latitude
+      t.float :longitude
       t.references :user
 
       t.timestamps

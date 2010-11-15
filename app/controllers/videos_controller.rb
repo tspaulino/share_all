@@ -1,6 +1,8 @@
 class VideosController < ApplicationController
+  before_filter :find_owner
+  
   def index
-    @videos = @current_user.videos.all
+    @videos = @owner.videos.all
   end
   
   def show

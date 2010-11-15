@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   
-  map.resources :comments
+  map.resources :comments      
+  map.resources :votes, :collection => {:like => :post, :dislike => :post}, :only => [:like, :dislike]
   
   map.resources :users do |user|   
     user.resources :videos, :has_many => :comments
@@ -9,7 +10,8 @@ ActionController::Routing::Routes.draw do |map|
     user.resources :documents, :has_many => :comments
     user.resources :events, :member => {:join => :any }, :has_many => :comments  
     user.resources :groups, :member => {:join => :any }, :has_many => :comments
-    user.resources :comments        
+    user.resources :comments  
+    user.resources :albums      
   end
       
   map.login '/login', :controller => "user_sessions", :action => "login"     

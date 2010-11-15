@@ -1,10 +1,11 @@
-class MusicsController < ApplicationController
+class MusicsController < ApplicationController   
+  before_filter :find_owner  
   def index
-    @musics = @current_user.musics.all
+    @musics = @owner.musics.all
   end
   
   def show
-    @music = @current_user.musics.find(params[:id])
+    @music = @owner.musics.find(params[:id])
   end
   
   def new
@@ -36,7 +37,7 @@ class MusicsController < ApplicationController
   end
   
   def destroy
-    @music = @current_user.musics.find(params[:id])
+    @music = @owner.musics.find(params[:id])
     @music.destroy
     flash[:notice] = "Successfully destroyed music."
     redirect_to :back

@@ -1,6 +1,8 @@
-class AlbumsController < ApplicationController
+class AlbumsController < ApplicationController          
+  before_filter :find_owner, :only => [:index]
+  
   def index
-    @albums = Album.all
+    @albums = @owner.albums.all
   end
   
   def show
@@ -8,14 +10,14 @@ class AlbumsController < ApplicationController
   end
   
   def new
-    @album = Album.new
+    @album = @current_user.albums.build
   end
   
   def create
-    @album = Album.new(params[:album])
+    @album = @current_user.albums.build(params[:album])
     if @album.save
       flash[:notice] = "Successfully created album."
-      redirect_to @album
+      redirect_to [@current_user, @album]
     else
       render :action => 'new'
     end

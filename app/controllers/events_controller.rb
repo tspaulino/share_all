@@ -1,10 +1,12 @@
-class EventsController < ApplicationController
+class EventsController < ApplicationController   
+  before_filter :find_owner, :only => [:index] ´
+  
   def index
-    @events = @current_user.events.all
+    @events = @owner.events.all
   end
   
   def show
-    @event = @current_user.events.find(params[:id])
+    @event = Event.find(params[:id])
   end
   
   def new
@@ -22,7 +24,7 @@ class EventsController < ApplicationController
   end
   
   def edit
-    @event = @current_user.events.find(params[:id])
+    @event = Event.find(params[:id])
   end
   
   def update
@@ -36,7 +38,7 @@ class EventsController < ApplicationController
   end
   
   def destroy
-    @event = @current_user.events.find(params[:id])
+    @event = Event.find(params[:id])
     @event.destroy
     flash[:notice] = "Successfully destroyed event."
     redirect_to :back

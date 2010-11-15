@@ -11,37 +11,34 @@
 <p>
   <strong>User:</strong>
   <%=h @album.user.name %>
-</p>
-<% unless @album.documents.blank? %>             
-  <strong><%= @album.documents.count %> documents</strong><br />
-  <% @album.documents.each do |document|%>
-    <%= document.name %>
-    <br />
-  <% end %>
-<% end %>
-<% unless @album.images.blank? %>             
-  <strong><%= @album.images.count %> images</strong><br />
-  <% @album.images.each do |image|%>
-    <%= image.name %>
-    <br />
-  <% end %>
-<% end %>
-<% unless @album.videos.blank? %>             
-  <strong><%= @album.videos.count %> videos</strong><br />
-  <% @album.videos.each do |video|%>
-    <%= video.name %>
-    <br />
-  <% end %>
-<% end %>
-<% unless @album.musics.blank? %>             
-  <strong><%= @album.musics.count %> musics</strong><br />
-  <% @album.musics.each do |music|%>
-    <%= music.name %>
-    <br />
-  <% end %>
-<% end %>  
+</p>  
+
+<div id="documents">
+<%= list_content(@album.documents, "Documents")%>        
+</div>
+<div id="document">
+</div>
+<div id="images">
+<%= list_content(@album.images, "Images")%>
+</div>
+<div id="image">
+</div>
+<div id="videos">
+<%= list_content(@album.videos, "Videos")%>
+</div>
+<div id="video">
+</div>
+<div id="musics">
+<%= list_content(@album.musics, "Musics")%>
+</div>
+<div id="music">
+</div>
+
 <p>
   <%= link_to "Edit", edit_user_album_path(@album.user, @album) %> |
   <%= link_to "Destroy", [@album.user, @album], :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", user_albums_path(@album.user) %>
+  <%= link_to "View All", user_albums_path(@album.user) %>  |  
+  <%= link_to_function "Add Video" do |page| 
+        page.insert_html :bottom, :video, :partial => "videos"
+      end %>
 </p>

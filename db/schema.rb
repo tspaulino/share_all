@@ -40,6 +40,13 @@ ActiveRecord::Schema.define(:version => 20101113152739) do
     t.datetime "updated_at"
   end
 
+  create_table "albuns_videos", :id => false, :force => true do |t|
+    t.integer  "album_id"
+    t.integer  "video_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "comments", :force => true do |t|
     t.text     "text"
     t.integer  "user_id"
@@ -67,8 +74,8 @@ ActiveRecord::Schema.define(:version => 20101113152739) do
     t.string   "location"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.integer  "latitude"
-    t.integer  "longitude"
+    t.float    "latitude"
+    t.float    "longitude"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -152,6 +159,7 @@ ActiveRecord::Schema.define(:version => 20101113152739) do
   end
 
   create_table "votes", :force => true do |t|
+    t.integer  "user_id"
     t.integer  "like",         :default => 0
     t.integer  "dislike",      :default => 0
     t.string   "votable_type"

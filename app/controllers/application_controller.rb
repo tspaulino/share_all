@@ -44,23 +44,10 @@ class ApplicationController < ActionController::Base
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil
     end
-    
-    def like(@object)
-      @vote = @object.vote || @object.vote.build
-      @vote.like++
-      @vote.save
-      flash[:notice] = "Vote increased!"
-      redirect_to :back
-    end
-    
-    def dislike(@object)
-      @vote = @object.vote || @object.vote.build
-      @vote.like--
-      @vote.save
-      flash[:notice] = "Vote decreased!"
-      redirect_to :back       
-    end
-      
+       
+    def find_owner
+      @owner = User.find(params[:user_id])
+    end      
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 end

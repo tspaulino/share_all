@@ -1,6 +1,8 @@
-class GroupsController < ApplicationController
+class GroupsController < ApplicationController  
+   before_filter :find_owner, :only => [:index] 
+   
   def index
-    @groups = @current_user.groups.all
+    @groups = @owner.groups.all
   end
   
   def show
