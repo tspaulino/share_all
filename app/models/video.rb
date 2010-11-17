@@ -8,7 +8,7 @@ class Video < ActiveRecord::Base
   has_attached_file :video
   validates_presence_of :name
   has_many :comments, :as => :commentable
-  has_one :votes, :as => :votable  
+  has_many :votes, :as => :votable  
   
   aasm_initial_state :pending
   aasm_state :pending

@@ -1,7 +1,8 @@
 class MusicsController < ApplicationController   
-  before_filter :find_owner  
+  before_filter :find_owner                         
+  
   def index
-    @musics = @owner.musics.all
+    @musics = @owner ? @owner.musics.all : Music.all
   end
   
   def show
@@ -37,9 +38,9 @@ class MusicsController < ApplicationController
   end
   
   def destroy
-    @music = @owner.musics.find(params[:id])
+    @music = @current_user.musics.find(params[:id])
     @music.destroy
     flash[:notice] = "Successfully destroyed music."
-    redirect_to :back
+    redirect_to user_musics_url(@current_user)
   end
 end

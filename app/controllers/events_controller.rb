@@ -1,8 +1,8 @@
 class EventsController < ApplicationController   
-  before_filter :find_owner, :only => [:index] ´
+  before_filter :find_owner, :only => [:index]
   
   def index
-    @events = @owner.events.all
+    @events = @owner ? @owner.events.all : Event.all
   end
   
   def show
@@ -41,7 +41,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.destroy
     flash[:notice] = "Successfully destroyed event."
-    redirect_to :back
+    redirect_to users_events_url(@current_user)
   end
   
   def join

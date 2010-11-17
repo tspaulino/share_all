@@ -2,7 +2,7 @@ class AlbumsController < ApplicationController
   before_filter :find_owner, :only => [:index]
   
   def index
-    @albums = @owner.albums.all
+    @albums = @owner ? @owner.albums.all : Album.all
   end
   
   def show
@@ -14,7 +14,7 @@ class AlbumsController < ApplicationController
   end
   
   def create
-    @album = @current_user.albums.build(params[:album])
+    @album = Album.new(params[:album])
     if @album.save
       flash[:notice] = "Successfully created album."
       redirect_to [@current_user, @album]
@@ -41,6 +41,6 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
     @album.destroy
     flash[:notice] = "Successfully destroyed album."
-    redirect_to albums_url
+    redirect_to user_albums_url(@current_user)
   end
 end

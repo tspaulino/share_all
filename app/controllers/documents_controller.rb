@@ -6,7 +6,7 @@ class DocumentsController < ApplicationController
   end
   
   def show
-    @document = @owner.documents.find(params[:id])
+    @document = Event.find(params[:id])
   end
   
   def new
@@ -41,7 +41,7 @@ class DocumentsController < ApplicationController
     @document = Document.find(params[:id])
     @document.destroy
     flash[:notice] = "Successfully destroyed document."
-    redirect_to :back
+    redirect_to user_documents_url(@current_user)
   end
     
 end

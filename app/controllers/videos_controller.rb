@@ -2,7 +2,7 @@ class VideosController < ApplicationController
   before_filter :find_owner
   
   def index
-    @videos = @owner.videos.all
+    @videos = @owner ? @owner.videos.all : Video.all
   end
   
   def show
@@ -42,6 +42,6 @@ class VideosController < ApplicationController
     @video = @current_user.videos.find(params[:id])
     @video.destroy
     flash[:notice] = "Successfully destroyed video."
-    redirect_to :back
+    redirect_to user_videos_url(@current_user)
   end
 end

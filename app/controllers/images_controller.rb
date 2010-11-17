@@ -41,6 +41,6 @@ class ImagesController < ApplicationController
     @image = @current_user.images.find(params[:id])
     @image.destroy
     flash[:notice] = "Successfully destroyed image."
-    redirect_to :back
+    redirect_to user_images_url(@current_user)
   end
 end

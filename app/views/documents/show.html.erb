@@ -9,10 +9,12 @@
 </p>   
 <p> 
   <%= rating(@document) %>
-</p>        
+</p>                                        
+<%= link_to "Download it", @document.file.url %>
 <p>
   <%= render :partial => "shared/vote", :locals => {:object => @document}%>
-</p>
+</p> 
+<%= render :partial => "shared/add_this" %> 
 <p>
   <%= link_to "Edit", edit_user_document_path(@current_user, @document) %> |
   <%= link_to "Destroy", [@current_user, @document], :confirm => 'Are you sure?', :method => :delete %> |

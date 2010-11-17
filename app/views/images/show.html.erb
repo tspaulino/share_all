@@ -24,6 +24,7 @@
 <p>
   <%= render :partial => "shared/vote", :locals => {:object => @image}%>
 </p>
+<%= render :partial => "shared/add_this" %> 
 <p>
   <%= link_to "Edit", edit_user_image_path(@image.user, @image) %> |
   <%= link_to "Destroy", [@image.user, @image], :confirm => 'Are you sure?', :method => :delete %> |

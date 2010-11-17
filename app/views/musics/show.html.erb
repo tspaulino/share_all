@@ -23,7 +23,8 @@
 </p>
 <p>
   <%= render :partial => "shared/vote", :locals => {:object => @music}%>
-</p>           
+</p> 
+<%= render :partial => "shared/add_this" %>          
 <p>
   <%= link_to "Edit", edit_user_music_path(@music.user, @music) %> |
   <%= link_to "Destroy", [@music.user, @music], :confirm => 'Are you sure?', :method => :delete %> |

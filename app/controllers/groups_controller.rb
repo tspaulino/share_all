@@ -1,12 +1,13 @@
 class GroupsController < ApplicationController  
-   before_filter :find_owner, :only => [:index] 
+  
+  before_filter :find_owner, :only => [:index] 
    
   def index
-    @groups = @owner.groups.all
+    @groups = @owner ? @owner.groups.all : Group.all
   end
   
   def show
-    @group = @current_user.groups.find(params[:id])
+    @group = Group.find(params[:id])
   end
   
   def new
@@ -41,7 +42,7 @@ class GroupsController < ApplicationController
     @group = @current_user.groups.find(params[:id])
     @group.destroy
     flash[:notice] = "Successfully destroyed group."
-    redirect_to :back
+    redirect_to user_groups_url(@group.user)
   end   
   
   def join
