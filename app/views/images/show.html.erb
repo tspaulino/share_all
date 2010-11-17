@@ -25,9 +25,11 @@
   <%= render :partial => "shared/vote", :locals => {:object => @image}%>
 </p>
 <%= render :partial => "shared/add_this" %> 
-<p>
-  <%= link_to "Edit", edit_user_image_path(@image.user, @image) %> |
-  <%= link_to "Destroy", [@image.user, @image], :confirm => 'Are you sure?', :method => :delete %> |
+<p>    
+  <% if @current_user == @image.user %>
+    <%= link_to "Edit", edit_user_image_path(@image.user, @image) %> |
+    <%= link_to "Destroy", [@image.user, @image], :confirm => 'Are you sure?', :method => :delete %> |
+  <% end %>
   <%= link_to "View All", user_images_path(@image.user) %> |
   <%= link_to_function "Leave a comment" do |page|
         page.insert_html :bottom, :comment, :partial => "shared/comments_form", :object => @image.comments.build, :locals => {:klazz => @image.class.to_s.downcase} 

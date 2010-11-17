@@ -11,9 +11,11 @@
       <td><%=h album.name %></td>
       <td><%=h album.description %></td>
       <td><%=h album.user.name %></td>
-      <td><%= link_to "Show", [album.user, album] %></td>
-      <td><%= link_to "Edit", edit_user_album_path(album.user, album) %></td>
-      <td><%= link_to "Destroy", [album.user, album], :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Show", [album.user, album] %></td>    
+      <% if @current_user == album.user %>
+        <td><%= link_to "Edit", edit_user_album_path(album.user, album) %></td>
+        <td><%= link_to "Destroy", [album.user, album], :confirm => 'Are you sure?', :method => :delete %></td> 
+      <% end %>
     </tr>
   <% end %>
 </table>

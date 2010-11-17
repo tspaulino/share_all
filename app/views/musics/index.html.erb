@@ -11,9 +11,11 @@
       <td><%=h music.name %></td>
       <td><%=h music.author %></td>
       <td><%=h music.user.name %></td>
-      <td><%= link_to "Show", [music.user, music] %></td>
-      <td><%= link_to "Edit", edit_user_music_path(music.user, music) %></td>
-      <td><%= link_to "Destroy", [music.user, music], :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Show", [music.user, music] %></td>  
+      <% if @current_user == music.user %>
+        <td><%= link_to "Edit", edit_user_music_path(music.user, music) %></td>
+        <td><%= link_to "Destroy", [music.user, music], :confirm => 'Are you sure?', :method => :delete %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>

@@ -26,8 +26,10 @@
 </p> 
 <%= render :partial => "shared/add_this" %>          
 <p>
-  <%= link_to "Edit", edit_user_music_path(@music.user, @music) %> |
-  <%= link_to "Destroy", [@music.user, @music], :confirm => 'Are you sure?', :method => :delete %> |
+  <% if @current_user == @music.user %>
+    <%= link_to "Edit", edit_user_music_path(@music.user, @music) %> |
+    <%= link_to "Destroy", [@music.user, @music], :confirm => 'Are you sure?', :method => :delete %> |
+  <% end %>
   <%= link_to "View All", user_musics_path(@music.user) %>  |  
   <%= link_to_function "Leave a comment" do |page|
         page.insert_html :bottom, :comment, :partial => "shared/comments_form", :object => @music.comments.build, :locals => {:klazz => @music.class.to_s.downcase} 

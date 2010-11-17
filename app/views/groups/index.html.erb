@@ -11,9 +11,11 @@
       <td><%=h group.name %></td>
       <td><%=h group.description %></td>
       <td><%=h group.user.name %></td>
-      <td><%= link_to "Show", [group.user, group] %></td>
-      <td><%= link_to "Edit", edit_user_group_path(group.user, group) %></td>
-      <td><%= link_to "Destroy", [group.user, group], :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Show", [group.user, group] %></td>     
+      <% if @current_user == group.user %>
+        <td><%= link_to "Edit", edit_user_group_path(group.user, group) %></td>
+        <td><%= link_to "Destroy", [group.user, group], :confirm => 'Are you sure?', :method => :delete %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>

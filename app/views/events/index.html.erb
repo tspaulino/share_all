@@ -13,9 +13,11 @@
       <td><%=h event.description %></td>
       <td><%=h event.location %></td>
       <td><%=h event.start_time %></td>      
-      <td><%= link_to "Show", [event.user, event] %></td>
-      <td><%= link_to "Edit", edit_user_event_path(event.user, event) %></td>
-      <td><%= link_to "Destroy", [event.user, event], :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Show", [event.user, event] %></td> 
+      <% if @current_user == event.user %>
+        <td><%= link_to "Edit", edit_user_event_path(event.user, event) %></td>
+        <td><%= link_to "Destroy", [event.user, event], :confirm => 'Are you sure?', :method => :delete %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>

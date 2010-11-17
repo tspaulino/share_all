@@ -44,9 +44,11 @@
 <p>
   <%= render :partial => "shared/comments_view", :locals => {:object => @event}%>
 </p>
-<p>
-  <%= link_to "Edit", edit_user_event_path(@event.user, @event) %> |
-  <%= link_to "Destroy", [@event.user, @event], :confirm => 'Are you sure?', :method => :delete %> |
+<p>     
+  <% if @current_user == @event.user %>
+    <%= link_to "Edit", edit_user_event_path(@event.user, @event) %> |
+    <%= link_to "Destroy", [@event.user, @event], :confirm => 'Are you sure?', :method => :delete %> |  
+  <% end %>
   <%= link_to "View All", user_events_path(@event.user) %>  |  
   <%= link_to "Participate", :controller => "events", :action => "join", :method => :post, :user_id => @current_user.id, :id => @event.id %>  |  
   <%= link_to_function "Leave a comment" do |page|

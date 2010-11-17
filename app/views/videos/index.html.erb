@@ -11,9 +11,11 @@
       <td><%=h video.name %></td>
       <td><%=h video.author %></td>
       <td><%=h video.user.name %></td>
-      <td><%= link_to "Show", [video.user, video] %></td>
-      <td><%= link_to "Edit", edit_user_video_path(video.user, video) %></td>
-      <td><%= link_to "Destroy", [video.user, video], :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Show", [video.user, video] %></td>    
+      <% if @current_user == video.user %>
+        <td><%= link_to "Edit", edit_user_video_path(video.user, video) %></td>
+        <td><%= link_to "Destroy", [video.user, video], :confirm => 'Are you sure?', :method => :delete %></td>  
+      <% end %>
     </tr>
   <% end %>
 </table>

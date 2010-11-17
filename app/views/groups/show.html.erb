@@ -23,9 +23,11 @@
 <p>
   <%= render :partial => "shared/comments_view", :locals => {:object => @group}%>
 </p>     
-<p>
-  <%= link_to "Edit", edit_user_group_path(@group.user, @group) %> |
-  <%= link_to "Destroy", [@group.user, @group], :confirm => 'Are you sure?', :method => :delete %> |
+<p>  
+  <% if @current_user == @group.user %>
+    <%= link_to "Edit", edit_user_group_path(@group.user, @group) %> |
+    <%= link_to "Destroy", [@group.user, @group], :confirm => 'Are you sure?', :method => :delete %> |
+  <% end %>
   <%= link_to "View All", user_groups_path(@group.user) %>  |  
   <%= link_to_function "Leave a comment" do |page|
         page.insert_html :bottom, :comment, :partial => "shared/comments_form", :object => @group.comments.build, :locals => {:klazz => @group.class.to_s.downcase} 

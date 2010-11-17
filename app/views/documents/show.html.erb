@@ -16,10 +16,12 @@
 </p> 
 <%= render :partial => "shared/add_this" %> 
 <p>
-  <%= link_to "Edit", edit_user_document_path(@current_user, @document) %> |
-  <%= link_to "Destroy", [@current_user, @document], :confirm => 'Are you sure?', :method => :delete %> |
+  <% if @current_user == @document.user %>
+    <%= link_to "Edit", edit_user_document_path(@current_user, @document) %> |
+    <%= link_to "Destroy", [@current_user, @document], :confirm => 'Are you sure?', :method => :delete %> |
+  <% end %>
   <%= link_to "View All", user_documents_path(@current_user) %>  |
   <%= link_to_function "Leave a comment" do |page|
-        page.insert_html :bottom, :comment, :partial => "shared/comments_form", :object => @document.comments.build, :locals => {:klazz => @document.class.to_s.downcase} 
+        page.insert_html :bottom, :comment, :partial => "shared/comments_form", :object => @document.comments.build 
   end %>
 </p>

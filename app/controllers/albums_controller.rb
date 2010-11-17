@@ -14,7 +14,7 @@ class AlbumsController < ApplicationController
   end
   
   def create
-    @album = Album.new(params[:album])
+    @album = @current_user.albums.build(params[:album])
     if @album.save
       flash[:notice] = "Successfully created album."
       redirect_to [@current_user, @album]

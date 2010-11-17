@@ -11,9 +11,11 @@
       <td><%=h image.name %></td>
       <td><%=h image.author %></td>
       <td><%=h image.user.name %></td>
-      <td><%= link_to "Show", [image.user, image] %></td>
-      <td><%= link_to "Edit", edit_user_image_path(image.user, image) %></td>
-      <td><%= link_to "Destroy", [image.user, image], :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Show", [image.user, image] %></td>    
+      <% if @current_user == image.user %>
+        <td><%= link_to "Edit", edit_user_image_path(image.user, image) %></td>
+        <td><%= link_to "Destroy", [image.user, image], :confirm => 'Are you sure?', :method => :delete %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>
