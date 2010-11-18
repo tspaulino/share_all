@@ -6,7 +6,7 @@ class MusicsController < ApplicationController
   end
   
   def show
-    @music = @owner.musics.find(params[:id])
+    @music = Music.find(params[:id])
   end
   
   def new
@@ -15,16 +15,18 @@ class MusicsController < ApplicationController
   
   def create
     @music = @current_user.musics.build(params[:music])
-    if @music.save
+    if @music.save       
+      @music.rename_file
       flash[:notice] = "Successfully created music."
       redirect_to [@current_user, @music]
     else
+      flash[:error] = @music.music_content_type
       render :action => 'new'
     end
   end
   
   def edit
-    @music = @current_user.musics.find(params[:id])
+    @music = Music.find(params[:id])
   end
   
   def update

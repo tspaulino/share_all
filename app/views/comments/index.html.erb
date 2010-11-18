@@ -1,16 +1,9 @@
 <% title "Comments" %>
-
-<table>
-  <tr>
-    <th>Author</th>
-    <th>Status</th>
-  </tr>
-  <% for comment in @comments %>
-    <tr>
-      <td><%=h comment.user.name %></td>
-      <td><%= comment.approved ? "Aprovado" : "Pendente" %></td>
-      <td><%= link_to "Show", [comment.user, comment] %></td>
-      <td><%= link_to "Destroy", [comment.user, comment], :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
+<% for comment in @comments %>
+    <%= image_tag(comment.user.avatar(:small))%>
+    <%=link_to comment.user.name, comment.user %> said: 
+    <p><%= comment.text %></p>      
+    <% if comment.commentable == @current_user %>
+      <p><%= link_to "Destroy", [comment.commentable, comment], :confirm => 'Are you sure?', :method => :delete %></p>
+    <% end %>
+<% end %>

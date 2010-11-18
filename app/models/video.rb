@@ -1,14 +1,14 @@
 class Video < ActiveRecord::Base    
-  
   include AASM
-  
   aasm_column :state
-  
   belongs_to :user            
   has_attached_file :video
   validates_presence_of :name
   has_many :comments, :as => :commentable
   has_many :votes, :as => :votable  
+  validates_attachment_presence :video
+  validates_attachment_content_type :video, :content_type => ["video/x-msvideo"]
+  validates_attachment_size :video, :less_than => 100.megabytes
   
   aasm_initial_state :pending
   aasm_state :pending

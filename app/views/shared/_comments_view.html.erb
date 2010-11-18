@@ -2,10 +2,14 @@
   <div id="comments">
     <strong><%= object.comments.count %> Comments</strong><br />
     <% object.comments.each do |comment| %>
-      <strong><%= comment.user.name %> said:</strong>
+      <%= image_tag(comment.user.avatar.url(:small), :alt => "Testing")%>
+      <strong><%= link_to(comment.user.name, comment.user) %> said:</strong>
       <p>
         <%= comment.text%>
-      </p>        
+      </p>
+      <% if @current_user == object.user %>
+        <%= link_to("Destroy", [@current_user, comment], :confirm => "Are you sure?", :method => :delete)%>
+      <% end%>        
     <% end %>
   </div>
 <% end %>

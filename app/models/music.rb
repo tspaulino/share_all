@@ -4,7 +4,9 @@ class Music < ActiveRecord::Base
   validates_presence_of :name
   has_many :comments, :as => :commentable
   has_many :votes, :as => :votable           
-  after_save :rename_file
+  validates_attachment_presence :music
+  validates_attachment_content_type :music, :content_type => ["audio/mpeg", "audio/x-mp3", "audio/mpg"]
+  validates_attachment_size :music, :less_than => 10.megabytes
   
   def rename_file                         
     new_name = "#{File.basename(music.path, ".*").parameterize}.mp3"

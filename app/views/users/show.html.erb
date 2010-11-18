@@ -22,17 +22,6 @@
   <strong>Hometown:</strong>
   <%=h @user.hometown %>
 </p>
-<% if @user.comments_received %>
-  <div id="comments">
-    <strong><%= @user.comments_received.count %> Comments</strong><br />
-    <% @user.comments_received.each do |comment| %>
-      <strong><%= comment.user.name %> said:</strong>
-      <p>
-        <%= comment.text%>
-      </p>        
-    <% end %>
-  </div>
-<% end %>
 <div id="comment">
 </div>
 <p>

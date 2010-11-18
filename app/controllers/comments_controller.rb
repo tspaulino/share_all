@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController                
+  before_filter :find_owner, :only => :index 
     
   def index
-    @comments = @current_user.comments_received.all
+    @comments = @owner.comments_received.all
   end
   
   def show
