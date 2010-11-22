@@ -7,8 +7,8 @@ class Video < ActiveRecord::Base
   has_many :comments, :as => :commentable
   has_many :votes, :as => :votable  
   validates_attachment_presence :video
-  validates_attachment_content_type :video, :content_type => ["video/x-msvideo"]
-  validates_attachment_size :video, :less_than => 100.megabytes
+  validates_attachment_content_type :video, :content_type => ["video/x-msvideo", "video/avi"]
+  #validates_attachment_size :video, :less_than => 100.megabytes
   
   aasm_initial_state :pending
   aasm_state :pending

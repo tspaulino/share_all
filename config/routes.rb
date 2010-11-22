@@ -1,7 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   
   map.resources :comments      
-  map.resources :votes, :collection => {:like => :post, :dislike => :post}, :only => [:like, :dislike]
+  map.resources :votes, :collection => {:like => :post, :dislike => :post}, :only => [:like, :dislike] 
+  map.resources :user_sessions, :only => [:new, :create]
   
   map.resources :users do |user|   
     user.resources :videos, :has_many => :comments
@@ -14,11 +15,11 @@ ActionController::Routing::Routes.draw do |map|
     user.resources :albums      
   end
       
-  map.login '/login', :controller => "user_sessions", :action => "login"     
+  #map.login '/login', :controller => "user_sessions", :action => "login"     
   map.logout '/logout', :controller => "user_sessions", :action => "logout"     
   map.signup '/signup', :controller => "users", :action => "new"
    
-  map.root :controller => "user_sessions", :action => "login"   
+  map.root :controller => "user_sessions", :action => "new"   
 
   # The priority is based upon order of creation: first created -> highest priority.
 

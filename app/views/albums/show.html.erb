@@ -40,7 +40,7 @@
     <%= link_to "Destroy", [@album.user, @album], :confirm => 'Are you sure?', :method => :delete %> |     
     <%= link_to_function "Add Video" do |page| 
            page.insert_html :bottom, :video, :partial => "videos"
-         end %>  |  
+    end %>  |  
   <% end %>
   <%= link_to "View All", user_albums_path(@album.user) %>
  

@@ -13,9 +13,12 @@
   <%=h @video.user.name %>
 </p>
 <p>
-  <strong>Vídeo:</strong>
-  
-  <%= render :partial => "shared/player", :locals => { :file_url => @video.video.url } %>
+  <strong>Vídeo:</strong>    
+  <% if @video.state == "converted" %>             
+    <%= render :partial => "shared/player", :locals => { :file_url => @video.video.url } %>      
+  <% else %>
+    <p>We're converting your video. Check again in a few minutes</p>
+  <% end %>
 </p>
 <p>
   <%= render :partial => "shared/comments_view", :locals => {:object => @video}%>

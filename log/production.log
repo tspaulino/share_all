@@ -501,3 +501,913 @@ ActionView::TemplateError (undefined method `login' for #<UserSession: no creden
     passenger (3.0.0) helper-scripts/passenger-spawn-server:99:in `<main>'
 
 Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#login (for 127.0.0.1 at 2010-11-19 14:25:02) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session, :url => login_url do |f| %>
+4:   <%= f.label :login %><br />
+5:   <%= f.text_field :login %><br />
+6:   <br />
+7:   <%= f.label :password %><br />
+8:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:5
+    app/views/user_sessions/new.html.erb:3
+    app/controllers/user_sessions_controller.rb:16:in `login'
+    passenger (3.0.0) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:180:in `start'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) helper-scripts/passenger-spawn-server:99
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#login (for 127.0.0.1 at 2010-11-19 19:31:29) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session, :url => login_url do |f| %>
+4:   <%= f.label :login %><br />
+5:   <%= f.text_field :login %><br />
+6:   <br />
+7:   <%= f.label :password %><br />
+8:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:5
+    app/views/user_sessions/new.html.erb:3
+    app/controllers/user_sessions_controller.rb:16:in `login'
+    passenger (3.0.0) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:180:in `start'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) helper-scripts/passenger-spawn-server:99
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#login (for 127.0.0.1 at 2010-11-19 19:31:40) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session, :url => login_url do |f| %>
+4:   <%= f.label :login %><br />
+5:   <%= f.text_field :login %><br />
+6:   <br />
+7:   <%= f.label :password %><br />
+8:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:5
+    app/views/user_sessions/new.html.erb:3
+    app/controllers/user_sessions_controller.rb:16:in `login'
+    passenger (3.0.0) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:180:in `start'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) helper-scripts/passenger-spawn-server:99
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#login (for 127.0.0.1 at 2010-11-19 19:32:29) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session, :url => login_url do |f| %>
+4:   <%= f.label :login %><br />
+5:   <%= f.text_field :login %><br />
+6:   <br />
+7:   <%= f.label :password %><br />
+8:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:5
+    app/views/user_sessions/new.html.erb:3
+    app/controllers/user_sessions_controller.rb:16:in `login'
+    passenger (3.0.0) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:180:in `start'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) helper-scripts/passenger-spawn-server:99
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#login (for 127.0.0.1 at 2010-11-19 19:32:30) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session, :url => login_url do |f| %>
+4:   <%= f.label :login %><br />
+5:   <%= f.text_field :login %><br />
+6:   <br />
+7:   <%= f.label :password %><br />
+8:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:5
+    app/views/user_sessions/new.html.erb:3
+    app/controllers/user_sessions_controller.rb:16:in `login'
+    passenger (3.0.0) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:180:in `start'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) helper-scripts/passenger-spawn-server:99
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#login (for 127.0.0.1 at 2010-11-19 19:32:39) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session, :url => login_url do |f| %>
+4:   <%= f.label :login %><br />
+5:   <%= f.text_field :login %><br />
+6:   <br />
+7:   <%= f.label :password %><br />
+8:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:5
+    app/views/user_sessions/new.html.erb:3
+    app/controllers/user_sessions_controller.rb:16:in `login'
+    passenger (3.0.0) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:180:in `start'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) helper-scripts/passenger-spawn-server:99
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#login (for 127.0.0.1 at 2010-11-19 19:34:58) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+
+ActionController::UnknownAction (No action responded to login. Actions: create, logout, and new):
+  passenger (3.0.0) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.0) helper-scripts/passenger-spawn-server:99
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#login (for 127.0.0.1 at 2010-11-19 19:35:17) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+
+ActionController::UnknownAction (No action responded to login. Actions: create, logout, and new):
+  passenger (3.0.0) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.0) helper-scripts/passenger-spawn-server:99
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#login (for 127.0.0.1 at 2010-11-19 19:35:18) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+
+ActionController::UnknownAction (No action responded to login. Actions: create, logout, and new):
+  passenger (3.0.0) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.0) helper-scripts/passenger-spawn-server:99
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#login (for 127.0.0.1 at 2010-11-19 19:35:18) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+
+ActionController::UnknownAction (No action responded to login. Actions: create, logout, and new):
+  passenger (3.0.0) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.0) helper-scripts/passenger-spawn-server:99
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#login (for 127.0.0.1 at 2010-11-19 19:35:18) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+
+ActionController::UnknownAction (No action responded to login. Actions: create, logout, and new):
+  passenger (3.0.0) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.0) helper-scripts/passenger-spawn-server:99
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#login (for 127.0.0.1 at 2010-11-19 19:35:19) [GET]
+  Parameters: {"action"=>"login", "controller"=>"user_sessions"}
+
+ActionController::UnknownAction (No action responded to login. Actions: create, logout, and new):
+  passenger (3.0.0) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.0) helper-scripts/passenger-spawn-server:99
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-19 19:35:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session do |f| %>
+4:   <%= f.label :login %><br />
+5:   <%= f.text_field :login %><br />
+6:   <br />
+7:   <%= f.label :password %><br />
+8:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:5
+    app/views/user_sessions/new.html.erb:3
+    passenger (3.0.0) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:180:in `start'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) helper-scripts/passenger-spawn-server:99
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-19 19:36:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session do |f| %>
+4:   <%= f.label :login %><br />
+5:   <%= f.text_field :login %><br />
+6:   <br />
+7:   <%= f.label :password %><br />
+8:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:5
+    app/views/user_sessions/new.html.erb:3
+    passenger (3.0.0) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:180:in `start'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) helper-scripts/passenger-spawn-server:99
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-19 19:36:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session do |f| %>
+4:   <%= f.label :login %><br />
+5:   <%= f.text_field :login %><br />
+6:   <br />
+7:   <%= f.label :password %><br />
+8:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:5
+    app/views/user_sessions/new.html.erb:3
+    passenger (3.0.0) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:180:in `start'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) helper-scripts/passenger-spawn-server:99
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-19 19:39:00) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session do |f| %>
+4:   <%= f.label :login %><br />
+5:   <%= f.text_field :login %><br />
+6:   <br />
+7:   <%= f.label :password %><br />
+8:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:5
+    app/views/user_sessions/new.html.erb:3
+    passenger (3.0.0) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:180:in `start'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) helper-scripts/passenger-spawn-server:99
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-19 19:39:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `login' for #<UserSession: no credentials provided>) on line #5 of app/views/user_sessions/new.html.erb:
+2: 
+3: <% form_for @user_session do |f| %>
+4:   <%= f.label :login %><br />
+5:   <%= f.text_field :login %><br />
+6:   <br />
+7:   <%= f.label :password %><br />
+8:   <%= f.password_field :password %><br />
+
+    app/views/user_sessions/new.html.erb:5
+    app/views/user_sessions/new.html.erb:3
+    passenger (3.0.0) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:180:in `start'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) helper-scripts/passenger-spawn-server:99
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-19 19:39:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined local variable or method `login_url' for #<ActionView::Base:0x102eaee00>) on line #22 of app/views/layouts/application.html.erb:
+19:           <% if @current_user %>
+20:             Hello, <%= link_to @current_user.name, user_url(@current_user) %>!    |    <%= link_to "Logout", logout_url %>                     
+21:           <% else %>
+22:             <%= link_to "Login", login_url %>   or   <%= link_to "Signup", signup_url%>
+23:           <% end %>
+24:         </div>
+25:       <%- flash.each do |name, msg| -%>
+
+    app/views/layouts/application.html.erb:22
+    passenger (3.0.0) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:180:in `start'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) helper-scripts/passenger-spawn-server:99
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-19 19:40:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined local variable or method `login_url' for #<ActionView::Base:0x102d5edc0>) on line #22 of app/views/layouts/application.html.erb:
+19:           <% if @current_user %>
+20:             Hello, <%= link_to @current_user.name, user_url(@current_user) %>!    |    <%= link_to "Logout", logout_url %>                     
+21:           <% else %>
+22:             <%= link_to "Login", login_url %>   or   <%= link_to "Signup", signup_url%>
+23:           <% end %>
+24:         </div>
+25:       <%- flash.each do |name, msg| -%>
+
+    app/views/layouts/application.html.erb:22
+    passenger (3.0.0) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:180:in `start'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) helper-scripts/passenger-spawn-server:99
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-19 19:40:20) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined local variable or method `login_url' for #<ActionView::Base:0x102e8d700>) on line #22 of app/views/layouts/application.html.erb:
+19:           <% if @current_user %>
+20:             Hello, <%= link_to @current_user.name, user_url(@current_user) %>!    |    <%= link_to "Logout", logout_url %>                     
+21:           <% else %>
+22:             <%= link_to "Login", login_url %>   or   <%= link_to "Signup", signup_url%>
+23:           <% end %>
+24:         </div>
+25:       <%- flash.each do |name, msg| -%>
+
+    app/views/layouts/application.html.erb:22
+    passenger (3.0.0) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+    passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:180:in `start'
+    passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+    passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+    passenger (3.0.0) helper-scripts/passenger-spawn-server:99
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-19 19:40:31) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 243ms (View: 8, DB: 0) | 200 OK [http://app.shareall.com/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-19 19:40:34) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 58ms (View: 6, DB: 0) | 200 OK [http://app.shareall.com/user_sessions/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-19 19:40:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 58ms (View: 6, DB: 0) | 200 OK [http://app.shareall.com/user_sessions/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-19 19:41:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 64ms (View: 6, DB: 0) | 200 OK [http://app.shareall.com/user_sessions/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-19 19:41:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 29ms (View: 6, DB: 0) | 200 OK [http://app.shareall.com/]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-11-19 19:41:11) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"tspaulino"}, "action"=>"create", "controller"=>"user_sessions"}
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'share_all_production.users' doesn't exist: SELECT * FROM `users` WHERE (LOWER(`users`.login) = 'tspaulino')  LIMIT 1):
+  authlogic (2.1.6) lib/authlogic/acts_as_authentic/login.rb:121:in `find_with_case'
+  authlogic (2.1.6) lib/authlogic/acts_as_authentic/login.rb:110:in `find_by_smart_case_login_field'
+  authlogic (2.1.6) lib/authlogic/session/scopes.rb:95:in `send'
+  authlogic (2.1.6) lib/authlogic/session/scopes.rb:95:in `search_for_record'
+  authlogic (2.1.6) lib/authlogic/session/scopes.rb:94:in `send'
+  authlogic (2.1.6) lib/authlogic/session/scopes.rb:94:in `search_for_record'
+  authlogic (2.1.6) lib/authlogic/session/password.rb:183:in `validate_by_password'
+  authlogic (2.1.6) lib/authlogic/session/callbacks.rb:83:in `validate'
+  authlogic (2.1.6) lib/authlogic/session/validation.rb:64:in `valid?'
+  authlogic (2.1.6) lib/authlogic/session/existence.rb:65:in `save'
+  app/controllers/user_sessions_controller.rb:11:in `create'
+  passenger (3.0.0) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.0) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.0) lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.0) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.0) helper-scripts/passenger-spawn-server:99
+
+Rendering rescues/layout (internal_server_error)
