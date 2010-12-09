@@ -1,23 +1,17 @@
-<% title "Groups" %>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>User</th>
-  </tr>
-  <% for group in @groups %>
-    <tr>
-      <td><%=h group.name %></td>
-      <td><%=h group.description %></td>
-      <td><%=h group.user.name %></td>
-      <td><%= link_to "Show", [group.user, group] %></td>     
+<% title "Groups" %>      
+<%= content_tag(:h1, yield(:title))%>   
+<% for group in @groups %>
+  <div class="object">    
+    <div class="info">
+       <%= content_tag(:p, link_to(group.name, [group.user, group])) %>
+    </div>
+    <div class="links">
       <% if @current_user == group.user %>
-        <td><%= link_to "Edit", edit_user_group_path(group.user, group) %></td>
-        <td><%= link_to "Destroy", [group.user, group], :confirm => 'Are you sure?', :method => :delete %></td>
-      <% end %>
-    </tr>
-  <% end %>
-</table>
-
+        <%= link_to "Edit", edit_user_group_path(group.user, group) %>
+        <%= link_to "Destroy", [group.user, group], :confirm => 'Are you sure?', :method => :delete %>
+      <% end %>  
+    </div> 
+    <div class="clear"></div>   
+  </div>
+<% end %>
 <p><%= link_to "New Group", new_user_group_path(@current_user) %></p>

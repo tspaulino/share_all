@@ -3,9 +3,8 @@ class User < ActiveRecord::Base
   acts_as_authentic
   
   login_field :login
-  #password_field :password             
-
-  has_attached_file :avatar, :styles => {:thumb => "150x150>", :small => "32x32>"} 
+       
+  has_attached_file :avatar, :styles => {:thumb => "100x150#", :small => "45x45#"} 
   validates_attachment_content_type :avatar, :content_type => ["image/jpeg", "image/jpg", "image/png", "image/gif"]
   has_many :comments_received, :class_name => "Comment", :as => :commentable    
   has_many :comments

@@ -5,7 +5,10 @@
   <%=h @document.name %>
 </p>
 <p>
-  <%= render :partial => "shared/comments_view", :locals => {:object => @document}%>
+  <%= render :partial => "shared/comments_view", :locals => {:object => @document}%>       
+  <%= link_to_function "Leave a comment" do |page|
+        page.insert_html :bottom, :comment, :partial => "shared/comments_form", :object => @document.comments.build 
+  end %>  
 </p>   
 <p> 
   <%= rating(@document) %>
@@ -20,8 +23,5 @@
     <%= link_to "Edit", edit_user_document_path(@current_user, @document) %> |
     <%= link_to "Destroy", [@current_user, @document], :confirm => 'Are you sure?', :method => :delete %> |
   <% end %>
-  <%= link_to "View All", user_documents_path(@current_user) %>  |
-  <%= link_to_function "Leave a comment" do |page|
-        page.insert_html :bottom, :comment, :partial => "shared/comments_form", :object => @document.comments.build 
-  end %>
+  <%= link_to "View All", user_documents_path(@current_user) %>
 </p>

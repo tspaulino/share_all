@@ -1,25 +1,17 @@
 <% title "Events" %>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Local</th>
-    <th>Start Time</th>
-  </tr>
-  <% for event in @events %>
-    <tr>
-      <td><%=h event.name %></td>
-      <td><%=h event.description %></td>
-      <td><%=h event.location %></td>
-      <td><%=h event.start_time %></td>      
-      <td><%= link_to "Show", [event.user, event] %></td> 
+<%= content_tag(:h1, yield(:title))%>   
+<% for event in @events %>
+  <div class="object">    
+    <div class="info">
+       <%= content_tag(:p, link_to(event.name, [event.user, event])) %>
+    </div>
+    <div class="links">
       <% if @current_user == event.user %>
-        <td><%= link_to "Edit", edit_user_event_path(event.user, event) %></td>
-        <td><%= link_to "Destroy", [event.user, event], :confirm => 'Are you sure?', :method => :delete %></td>
-      <% end %>
-    </tr>
-  <% end %>
-</table>
-
+        <%= link_to "Edit", edit_user_event_path(event.user, event) %>
+        <%= link_to "Destroy", [event.user, event], :confirm => 'Are you sure?', :method => :delete %>
+      <% end %>  
+    </div> 
+    <div class="clear"></div>   
+  </div>
+<% end %>
 <p><%= link_to "New Event", new_user_event_path(@current_user) %></p>

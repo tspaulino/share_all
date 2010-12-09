@@ -12,3 +12,16 @@ The following style may be *conditionally* included for improved support on olde
 form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
 
 --------------------------------------------------------------------------------------------------*/
+form.formtastic{
+	background: #06879A;
+	-moz-border-radius: 5px;
+	padding: 5px;
+	color: #FFFFFF;
+}  
+
+form.formtastic fieldset  ol  li label {
+	display:block;
+	padding: 2px;
+	width:25%;
+	float: none;
+}

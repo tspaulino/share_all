@@ -1,5 +1,5 @@
 # encoding: utf-8
-require 'test/helper'
+require './test/helper'
 
 class Dummy
   # This is a dummy class
@@ -606,7 +606,7 @@ class AttachmentTest < Test::Unit::TestCase
               [:large, :medium, :small].each do |style|
                 io = @attachment.to_file(style)
                 # p "in commit to disk test, io is #{io.inspect} and @instance.id is #{@instance.id}"
-                assert File.exists?(io)
+                assert File.exists?(io.path)
                 assert ! io.is_a?(::Tempfile)
                 io.close
               end
@@ -703,7 +703,7 @@ class AttachmentTest < Test::Unit::TestCase
       now = Time.now
       Time.stubs(:now).returns(now)
       @dummy.avatar = @file
-      assert now, @dummy.avatar.updated_at
+      assert_equal now.to_i, @dummy.avatar.updated_at.to_i
     end
 
     should "return nil when reloaded and sent #avatar_updated_at" do

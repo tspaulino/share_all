@@ -1,23 +1,19 @@
-<% title "Images" %>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Author</th>
-    <th>User</th>
-  </tr>
-  <% for image in @images %>
-    <tr>
-      <td><%=h image.name %></td>
-      <td><%=h image.author %></td>
-      <td><%=h image.user.name %></td>
-      <td><%= link_to "Show", [image.user, image] %></td>    
+<% title "Images" %>      
+<%= content_tag(:h1, yield(:title))%>   
+<% for image in @images %>
+  <div class="object">    
+    <%= link_to(image_tag(image.image.url(:small), :alt => "image", :class => "avatar"), user_image_url(image.user, image))%>
+    <div class="info">
+       <%=h image.name %>
+       <%=h image.author %>
+    </div>
+    <div class="links">
       <% if @current_user == image.user %>
-        <td><%= link_to "Edit", edit_user_image_path(image.user, image) %></td>
-        <td><%= link_to "Destroy", [image.user, image], :confirm => 'Are you sure?', :method => :delete %></td>
-      <% end %>
-    </tr>
-  <% end %>
-</table>
-
+        <%= link_to "Edit", edit_user_image_path(image.user, image) %>
+        <%= link_to "Destroy", [image.user, image], :confirm => 'Are you sure?', :method => :delete %>
+      <% end %>  
+    </div> 
+    <div class="clear"></div>   
+  </div>
+<% end %>
 <p><%= link_to "New Image", new_user_image_path(@current_user) %></p>

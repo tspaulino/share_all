@@ -1,15 +1,18 @@
 <% if object.comments %>
   <div id="comments">
     <strong><%= object.comments.count %> Comments</strong><br />
-    <% object.comments.each do |comment| %>
-      <%= image_tag(comment.user.avatar.url(:small), :alt => "Testing")%>
-      <strong><%= link_to(comment.user.name, comment.user) %> said:</strong>
-      <p>
-        <%= comment.text%>
-      </p>
-      <% if @current_user == object.user %>
-        <%= link_to("Destroy", [@current_user, comment], :confirm => "Are you sure?", :method => :delete)%>
-      <% end%>        
+    <% object.comments.each do |comment| %>      
+      <div class="user-comment">
+        <%= image_tag(comment.user.avatar(:small), :alt => "avatar", :class =>"avatar") %>
+        <div class="info">
+          <%=link_to comment.user.name, comment.user %> said: 
+          <p><%= comment.text %></p>
+          <% if @current_user == object.user %>
+            <%= link_to("Destroy", [@current_user, comment], :confirm => "Are you sure?", :method => :delete)%>
+         <% end%>               
+        </div>
+        <div class="clear"></div>        
+      </div>
     <% end %>
   </div>
 <% end %>

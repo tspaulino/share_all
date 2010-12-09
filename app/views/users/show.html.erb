@@ -1,47 +1,62 @@
-<% title "User" %>
-<p>
-  <%= image_tag(@user.avatar.url(:thumb), :alt => "My Avatar")%>
-</p>
-<p>
-  <strong>Name:</strong>
-  <%=h @user.name %>
-</p>
-<p>
-  <strong>Login:</strong>
-  <%=h @user.login %>
-</p>
-<p>
-  <strong>Email:</strong>
-  <%=h @user.email %>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%=h @user.description %>
-</p>
-<p>
-  <strong>Hometown:</strong>
-  <%=h @user.hometown %>
-</p>
-<div id="comment">
+<% title @user.name %>
+
+<div class="object">
+  <%= image_tag(@user.avatar.url(:thumb), :alt => "My Avatar", :class => "avatar")%>
+  <div class="info">
+    <h1>
+      <%=h @user.name %>
+    </h1>
+    <p>
+      <%=h @user.description %>
+    </p>
+    <p>
+      <%=h @user.hometown %>
+    </p>
+    <p>
+      <%=h @user.email %>
+    </p>    
+  </div>
+  <div class="links">
+    <% if @current_user == @user %>
+      <%= link_to "Edit", edit_user_path(@user) %> 
+      <%= link_to "Destroy", @user, :confirm => 'Are you sure?', :method => :delete %>
+    <% end %>      
+  </div>
+  <div class="clear"></div>      
 </div>
-<p>
-  <%= link_to("Comments", user_comments_url(@user)) %><br />
-  <%= link_to("Groups", user_groups_url(@user)) %><br />    
-  <%= link_to("Musics", user_musics_url(@user)) %><br />      
-  <%= link_to("Videos", user_videos_url(@user)) %><br />      
-  <%= link_to("Images", user_images_url(@user)) %><br />            
-  <%= link_to("Documents", user_documents_url(@user)) %><br /> 
-  <%= link_to("Events", user_events_url(@user)) %><br />    
-  <%= link_to("Albums", user_albums_url(@user)) %>               
-</p>  
-<p>                        
-  <% if @current_user == @user %>
-    <%= link_to "Edit", edit_user_path(@user) %> |
-    <%= link_to "Destroy", @user, :confirm => 'Are you sure?', :method => :delete %> |
-  <% end %>
-  <%= link_to "View All", users_path %>
-  <%= link_to_function "Leave a comment" do |page|
-        page.insert_html :bottom, :comment, :partial => "shared/comments_form", :object => @user.comments_received.build, :locals => {:klazz => @user.class.to_s.downcase} 
-  end %>
-  
-</p>
+<div id="menu">
+  <ul>
+    <%= content_tag(:li, link_to("Groups", user_groups_url(@user))) %>    
+    <%= content_tag(:li, link_to("Musics", user_musics_url(@user))) %>      
+    <%= content_tag(:li, link_to("Videos", user_videos_url(@user))) %>      
+    <%= content_tag(:li, link_to("Images", user_images_url(@user))) %>            
+    <%= content_tag(:li, link_to("Documents", user_documents_url(@user))) %> 
+    <%= content_tag(:li, link_to("Events", user_events_url(@user))) %>    
+    <%= content_tag(:li, link_to("Albums", user_albums_url(@user))) %>               
+  </ul> 
+</div>
+<div id="comments">
+  <h1>Last comments</h1>
+  <% @user.comments_received.each do |comment| %>
+    <div class="user-comment">
+      <%= image_tag(comment.user.avatar(:small), :alt => "avatar", :class =>"avatar") %>
+      <div class="info">
+        <%=link_to comment.user.name, comment.user %> said: 
+        <p><%= comment.text %></p>
+        <% if comment.commentable == @current_user %>
+          <p><%= link_to "Destroy", [comment.commentable, comment], :confirm => 'Are you sure?', :method => :delete %></p>
+        <% end %>               
+      </div>
+      <div class="clear"></div>                                 
+    </div>
+  <% end %>  
+  <div id="comment">
+  </div>
+  <div class="links">
+    <%= link_to_function "Leave a comment" do |page|
+          page.insert_html :bottom, :comment, :partial => "shared/comments_form", :object => @user.comments_received.build, :locals => {:klazz => @user.class.to_s.downcase} 
+    end %>             
+  </div>
+  <div class="clear"></div>
+</div>
+<div class="clear"></div> 

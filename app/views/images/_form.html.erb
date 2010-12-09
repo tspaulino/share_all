@@ -1,4 +1,5 @@
 <% semantic_form_for [@current_user, @image], :html => {:multipart => true} do |f| %>
+  <%= content_tag(:h1, yield(:title))%>
   <% f.inputs @image do %>
     <p>
       <%= f.input :name %>

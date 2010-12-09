@@ -1,23 +1,17 @@
 <% title "Musics" %>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Author</th>
-    <th>User</th>
-  </tr>
-  <% for music in @musics %>
-    <tr>
-      <td><%=h music.name %></td>
-      <td><%=h music.author %></td>
-      <td><%=h music.user.name %></td>
-      <td><%= link_to "Show", [music.user, music] %></td>  
+<%= content_tag(:h1, yield(:title))%>   
+<% for music in @musics %>
+  <div class="object">    
+    <div class="info">
+       <%= content_tag(:p, link_to(music.name, [music.user, music])) %>
+    </div>
+    <div class="links">
       <% if @current_user == music.user %>
-        <td><%= link_to "Edit", edit_user_music_path(music.user, music) %></td>
-        <td><%= link_to "Destroy", [music.user, music], :confirm => 'Are you sure?', :method => :delete %></td>
-      <% end %>
-    </tr>
-  <% end %>
-</table>
-
+        <%= link_to "Edit", edit_user_music_path(music.user, music) %>
+        <%= link_to "Destroy", [music.user, music], :confirm => 'Are you sure?', :method => :delete %>
+      <% end %>  
+    </div> 
+    <div class="clear"></div>   
+  </div>
+<% end %>
 <p><%= link_to "New Music", new_user_music_path(@current_user) %></p>

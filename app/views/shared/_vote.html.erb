@@ -1,12 +1,13 @@
-<% form_for :vote, :url => like_votes_url, :html => {:method => :post} do |f| %>
+<% form_for :vote, :url => like_votes_url, :html => {:method => :post, :class => "vote-like"} do |f| %>
     <%= f.hidden_field :user_id, :value => @current_user.id %>
     <%= f.hidden_field :votable_id, :value => object.id %>
     <%= f.hidden_field :votable_type, :value => object.class.to_s %>   
     <%= f.submit "Like" %>
 <% end %>
-<% form_for :vote, :url => dislike_votes_url, :html => {:method => :post} do |f| %>
+<% form_for :vote, :url => dislike_votes_url, :html => {:method => :post, :class => "vote-dislike"} do |f| %>
     <%= f.hidden_field :user_id, :value => @current_user.id %>
     <%= f.hidden_field :votable_id, :value => object.id %>
     <%= f.hidden_field :votable_type, :value => object.class.to_s %>  
     <%= f.submit "Dislike" %>
 <% end %>
+<div class="clear"></div>

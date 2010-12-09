@@ -1,21 +1,25 @@
-<% title "Users" %>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Login</th>
-    <th>Email</th>
-  </tr>
-  <% for user in @users %>
-    <tr>
-      <td><%=h user.name %></td>
-      <td><%=h user.login %></td>
-      <td><%=h user.email %></td> 
-      <td><%= link_to "Show", user %></td>
-      <% if @current_user == user %> 
-        <td><%= link_to "Edit", edit_user_path(user) %></td>
-        <td><%= link_to "Destroy", user, :confirm => 'Are you sure?', :method => :delete %></td>
-      <% end %>
-    </tr>
+<% title "Users"%>
+<%= content_tag(:h1, yield(:title))%>      
+<% for user in @users %>
+<div class="object">
+  <%= image_tag(user.avatar.url(:thumb), :alt => "avatar", :class => "avatar")%>
+ <div class="info">
+    <%=content_tag(:strong, link_to(user.name, user)) %>
+    <%=content_tag(:p, user.hometown)%>
+    <%=content_tag(:p, user.description)%>
+    <ul>      
+      <%=content_tag(:li, link_to("#{user.videos.count} Videos", user_videos_url(user))) %>
+      <%=content_tag(:li, link_to("#{user.musics.count} Musics", user_musics_url(user))) %>
+      <%=content_tag(:li, link_to("#{user.documents.count} Documents", user_documents_url(user))) %>  
+      <%=content_tag(:li, link_to("#{user.images.count} Images", user_images_url(user))) %>                          
+    </ul>
+  </div>                                   
+  <% if @current_user == user %>
+  <div class="links">
+    <%= link_to "Edit", edit_user_path(user) %>
+    <%= link_to "Destroy", user, :confirm => 'Are you sure?', :method => :delete %>
+  </div>                                                                                            
   <% end %>
-</table>
+  <div class="clear"></div>
+</div>
+<% end %>

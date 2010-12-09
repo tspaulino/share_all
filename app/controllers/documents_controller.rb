@@ -6,7 +6,7 @@ class DocumentsController < ApplicationController
   end
   
   def show
-    @document = Event.find(params[:id])
+    @document = Document.find(params[:id])
   end
   
   def new

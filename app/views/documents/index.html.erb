@@ -1,21 +1,17 @@
-<% title "Documents" %>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>User</th>
-  </tr>
-  <% for document in @documents %>
-    <tr>
-      <td><%=h document.name %></td>
-      <td><%=h document.user.name %></td>
-      <td><%= link_to "Show", [document.user, document] %></td> 
+<% title "Documents" %>      
+<%= content_tag(:h1, yield(:title))%>   
+<% for document in @documents %>
+  <div class="object">    
+    <div class="info">
+       <%= content_tag(:p, link_to(document.name, [document.user, document])) %>
+    </div>
+    <div class="links">
       <% if @current_user == document.user %>
-        <td><%= link_to "Edit", edit_user_document_path(@current_user, document) %></td>
-        <td><%= link_to "Destroy", [document.user, document], :confirm => 'Are you sure?', :method => :delete %></td>
-      <% end %>
-    </tr>
-  <% end %>
-</table>
-
+        <%= link_to "Edit", edit_user_document_path(document.user, document) %>
+        <%= link_to "Destroy", [document.user, document], :confirm => 'Are you sure?', :method => :delete %>
+      <% end %>  
+    </div> 
+    <div class="clear"></div>   
+  </div>
+<% end %>
 <p><%= link_to "New Document", new_user_document_path(@current_user) %></p>

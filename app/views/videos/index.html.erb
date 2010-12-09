@@ -1,23 +1,17 @@
 <% title "Videos" %>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Author</th>
-    <th>User</th>
-  </tr>
-  <% for video in @videos %>
-    <tr>
-      <td><%=h video.name %></td>
-      <td><%=h video.author %></td>
-      <td><%=h video.user.name %></td>
-      <td><%= link_to "Show", [video.user, video] %></td>    
+<%= content_tag(:h1, yield(:title))%>   
+<% for video in @videos %>
+  <div class="object">    
+    <div class="info">
+       <%= content_tag(:p, link_to(video.name, [video.user, video])) %>
+    </div>
+    <div class="links">
       <% if @current_user == video.user %>
-        <td><%= link_to "Edit", edit_user_video_path(video.user, video) %></td>
-        <td><%= link_to "Destroy", [video.user, video], :confirm => 'Are you sure?', :method => :delete %></td>  
-      <% end %>
-    </tr>
-  <% end %>
-</table>
-
-<p><%= link_to "New Video", new_user_video_path(@current_user) %></p>
+        <%= link_to "Edit", edit_user_video_path(video.user, video) %>
+        <%= link_to "Destroy", [video.user, video], :confirm => 'Are you sure?', :method => :delete %>
+      <% end %>  
+    </div> 
+    <div class="clear"></div>   
+  </div>
+<% end %>
+<p><%= link_to "New Music", new_user_video_path(@current_user) %></p>

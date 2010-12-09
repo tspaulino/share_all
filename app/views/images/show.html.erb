@@ -17,6 +17,9 @@
 </p>
 <p>
   <%= render :partial => "shared/comments_view", :locals => {:object => @image}%>
+  <%= link_to_function "Leave a comment" do |page|
+        page.insert_html :bottom, :comment, :partial => "shared/comments_form", :object => @image.comments.build, :locals => {:klazz => @image.class.to_s.downcase} 
+  end %>
 </p>                                                                    
 <p> 
   <%= rating(@image) %>
@@ -30,8 +33,5 @@
     <%= link_to "Edit", edit_user_image_path(@image.user, @image) %> |
     <%= link_to "Destroy", [@image.user, @image], :confirm => 'Are you sure?', :method => :delete %> |
   <% end %>
-  <%= link_to "View All", user_images_path(@image.user) %> |
-  <%= link_to_function "Leave a comment" do |page|
-        page.insert_html :bottom, :comment, :partial => "shared/comments_form", :object => @image.comments.build, :locals => {:klazz => @image.class.to_s.downcase} 
-  end %>
+  <%= link_to "View All", user_images_path(@image.user) %>
 </p>
