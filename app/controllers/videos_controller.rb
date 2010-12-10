@@ -16,9 +16,7 @@ class VideosController < ApplicationController
   def create
     @video = @current_user.videos.build(params[:video])
     if @video.save                               
-      spawn do
-        @video.convert                                   
-      end
+      @video.convert                                   
       flash[:notice] = "Successfully created video."
       redirect_to [@current_user, @video]
     else   
