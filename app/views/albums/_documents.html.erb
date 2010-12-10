@@ -1,0 +1,9 @@
+<% semantic_form_for [@album.user, @album] do |f| %>
+  <%fields_for "album[document_attributes][]", @album.documents.build do |p| %>
+    <%= p.label "Select a document"%>
+    <%= p.select :id, (@current_user.documents - @album.documents).map {|a| [a.name, a.id]}%>
+  <% end %>
+  <% f.buttons do %>  
+     <p><%= f.commit_button %></p>
+   <% end %>
+<% end %>

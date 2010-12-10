@@ -41,6 +41,15 @@
     <%= link_to_function "Add Video" do |page| 
            page.insert_html :bottom, :video, :partial => "videos"
     end %>  |  
+    <%= link_to_function "Add Music" do |page| 
+           page.insert_html :bottom, :music, :partial => "musics"
+    end %>  |      
+    <%= link_to_function "Add Document" do |page| 
+           page.insert_html :bottom, :document, :partial => "documents"
+    end %>  |                                                        
+    <%= link_to_function "Add Image" do |page| 
+           page.insert_html :bottom, :image, :partial => "images"
+    end %>  | 
   <% end %>
   <%= link_to "View All", user_albums_path(@album.user) %>
  

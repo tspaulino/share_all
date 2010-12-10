@@ -3,7 +3,7 @@ module AlbumsHelper
     unless collection.blank?              
       html = content_tag :strong, "#{collection.count} #{pluralized_class}" 
       collection.each do |object|
-         html << content_tag(:p, link_to(object.name, object)) 
+         html << content_tag(:p, link_to(object.name, [object.user, object])) 
       end
       html 
     end 

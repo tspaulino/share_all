@@ -31,7 +31,7 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
     if @album.update_attributes(params[:album])
       flash[:notice] = "Successfully updated album."
-      redirect_to @album
+      redirect_to [@album.user, @album]
     else
       render :action => 'edit'
     end

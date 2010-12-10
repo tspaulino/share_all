@@ -1,0 +1,9 @@
+<% semantic_form_for [@album.user, @album] do |f| %>
+  <%fields_for "album[music_attributes][]", @album.musics.build do |p| %>
+    <%= p.label "Select a music"%>
+    <%= p.select :id, (@current_user.musics - @album.musics).map {|a| [a.name, a.id]}%>
+  <% end %>
+  <% f.buttons do %>  
+     <p><%= f.commit_button %></p>
+   <% end %>
+<% end %>

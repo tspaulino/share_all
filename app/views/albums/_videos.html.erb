@@ -1,1 +1,9 @@
-<p>Eu funfo</p>
+<% semantic_form_for [@album.user, @album] do |f| %>
+  <%fields_for "album[video_attributes][]", @album.videos.build do |p| %>
+    <%= p.label "Select a video"%>
+    <%= p.select :id, (@current_user.videos - @album.videos).map {|a| [a.name, a.id]}%>
+  <% end %>
+  <% f.buttons do %>  
+     <p><%= f.commit_button %></p>
+   <% end %>
+<% end %>
