@@ -12,7 +12,7 @@ ActionController::Routing::Routes.draw do |map|
     user.resources :events, :member => {:join => :any }, :has_many => :comments  
     user.resources :groups, :member => {:join => :any }, :has_many => :comments
     user.resources :comments  
-    user.resources :albums      
+    user.resources :albums, :member => {:remove_data => :any}      
   end
       
   #map.login '/login', :controller => "user_sessions", :action => "login"     
