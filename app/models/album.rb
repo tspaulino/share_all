@@ -6,7 +6,8 @@ class Album < ActiveRecord::Base
   has_and_belongs_to_many :images, :join_table => "albuns_images"
   has_and_belongs_to_many :musics, :join_table => "albuns_musics"     
   
-  validates_uniqueness_of :name, :on => :create, :message => "must be unique", :scope => :user_id
+  validates_uniqueness_of :name, :on => :create, :message => "must be unique", :scope => :user_id  
+  validates_presence_of :name, :on => :create, :message => "mandatory field!"
 
   def video_attributes=(video_attributes)
     video_attributes.each do |attributes|      

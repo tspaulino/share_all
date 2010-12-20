@@ -6,22 +6,22 @@
       <%= f.input :name, :required => true %>
     </p>
     <p>
-      <%= f.input :description, :as => :text %>
+      <%= f.input :description, :as => :text, :required => false %>
     </p>
     <p>
       <%= f.input :location, :required => true %>
     </p>
     <p>
-      <%= f.input :start_time, :required => true %>
+      <%= f.input :start_time, :required => false %>
     </p>
     <p>
-      <%= f.input :end_time, :required => true%>
+      <%= f.input :end_time, :required => false%>
     </p>
     <p>
-      <%= f.input :latitude %>
+      <%= f.input :latitude, :required => false %>
     </p>
     <p>                                                 
-      <%= f.input :longitude %>
+      <%= f.input :longitude, :required => false %>
     </p>                                                  
   <% end %>
   <% f.buttons do %>  

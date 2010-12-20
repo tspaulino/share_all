@@ -12,13 +12,13 @@
       <%= f.input :email %>
     </p>
     <p>
-      <%= f.input :avatar, :as => :file %>
+      <%= f.input :avatar, :as => :file, :required => false %>
     </p>
     <p>
-      <%= f.input :description %>
+      <%= f.input :description, :required => false %>
     </p>
     <p>
-      <%= f.input :hometown %>
+      <%= f.input :hometown, :required => false %>
     </p>
     <p>
       <%= f.input :password, :as => :password %>
